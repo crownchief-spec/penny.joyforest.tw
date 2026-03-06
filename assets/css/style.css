@@ -142,6 +142,19 @@
  @media(max-width:980px){.footer-grid{grid-template-columns:1fr}}
  @media(max-width:420px){.sitemap-list{column-count:1}}
  
+ /* ---------- Footer 女神介紹 ---------- */
+ .footer-goddess{display:flex; align-items:center; gap:20px; padding:20px 0; flex-wrap:wrap}
+ .footer-goddess .goddess-avatar{width:80px; height:80px; border-radius:50%; object-fit:cover; border:3px solid rgba(184,137,91,.35); flex-shrink:0}
+ .footer-goddess .goddess-info{flex:1; min-width:200px}
+ .footer-goddess .goddess-name{font-weight:800; font-size:18px; margin:0 0 6px; color:var(--wood-dark)}
+ .footer-goddess .goddess-desc{font-size:14px; line-height:1.5; color:var(--muted); margin:0 0 10px}
+ .footer-goddess .goddess-ig{display:inline-flex; align-items:center; gap:8px; padding:8px 14px; border-radius:999px; font-size:14px; font-weight:700; text-decoration:none; background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); color:#fff; transition:opacity .2s}
+ .footer-goddess .goddess-ig:hover{opacity:.9}
+ /* ---------- 文章內穿插照片 ---------- */
+ .article-photo-inline{margin:28px 0; border-radius:var(--r); overflow:hidden; border:1px solid var(--line); box-shadow:var(--shadow)}
+ .article-photo-inline img{width:100%; height:auto; display:block; aspect-ratio:4/3; object-fit:cover}
+ .article-photo-inline .caption{font-size:13px; color:var(--muted); padding:10px 14px; background:rgba(255,255,255,.6); text-align:center}
+ 
  /* ---------- SEO 文章頁：小編／專家分享風格 ---------- */
  .seo-article .section.tight .container{max-width:720px}
  .article-hero{position:relative; border-radius:var(--r); overflow:hidden; margin-bottom:24px; background:#111; aspect-ratio:16/9; min-height:240px}
