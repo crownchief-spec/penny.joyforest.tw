@@ -229,3 +229,26 @@
    .slider-btn span{font-size:1.7rem}
    .slider-counter{font-size:1.45rem; gap:10px}
  }
+
+ /* ---------- 精選景點・旅行社風格卡片 ---------- */
+ .section--spots{background:linear-gradient(180deg, rgba(239,238,226,.5) 0%, var(--bg) 100%)}
+ .seo-article .section--spots .container{max-width:var(--container)}
+ .spots-intro{text-align:center; margin:0 0 32px; max-width:52ch; margin-inline:auto; color:var(--muted); font-size:15px}
+ .spot-cards{display:flex; flex-direction:column; gap:28px}
+ .spot-card{display:grid; grid-template-columns:min(380px, 42%) 1fr; gap:0; align-items:stretch; background:var(--surface); border-radius:var(--r); box-shadow:var(--shadow); border:1px solid var(--line); overflow:hidden; transition:box-shadow .2s}
+ .spot-card:hover{box-shadow:0 14px 40px rgba(0,0,0,.12)}
+ .spot-card__img{aspect-ratio:4/3; min-height:200px; overflow:hidden; background:#eee}
+ .spot-card__img img{width:100%; height:100%; object-fit:cover; display:block}
+ .spot-card__body{padding:22px 26px 26px; display:flex; flex-direction:column; justify-content:space-between}
+ .spot-card__title{font-size:clamp(18px,2vw,22px); margin:0 0 10px; line-height:1.2}
+ .spot-card__meta{font-size:12px; color:var(--wood-dark); margin-bottom:12px}
+ .spot-card__desc{margin:0 0 16px; font-size:14px; line-height:1.65; color:var(--text)}
+ .spot-card__links{display:flex; flex-wrap:wrap; gap:8px; align-items:center}
+ .spot-card__links a{display:inline-flex; align-items:center; gap:6px; padding:8px 14px; border-radius:999px; font-size:13px; font-weight:600; text-decoration:none; background:rgba(184,137,91,.12); border:1px solid rgba(184,137,91,.28); color:var(--wood-dark); transition:background .2s, border-color .2s}
+ .spot-card__links a:hover{background:rgba(184,137,91,.22); border-color:var(--wood)}
+ .spot-card__links a::after{content:"→"; font-weight:700}
+ @media(max-width:880px){
+   .spot-card{grid-template-columns:1fr}
+   .spot-card__img{aspect-ratio:16/9; min-height:220px}
+   .spot-card__body{padding:18px 20px 20px}
+ }
