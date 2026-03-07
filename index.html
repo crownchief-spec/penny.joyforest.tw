@@ -16,6 +16,7 @@
    <meta name="twitter:description" content="我們兩個自己看的六日行程～兩個人、一台車、九州櫻花。" />
    <meta name="twitter:image" content="https://penny-joyforest-tw.pages.dev/assets/images/hero/kyushu-sakura-hero.jpg" />
    <link rel="stylesheet" href="assets/css/style.css" />
+   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
  </head>
  <body class="seo-article">
    <header class="site-header">
@@ -138,17 +139,8 @@
                      櫻花每年開的時間不太一樣，我們有預留一點彈性；黑川或福岡那幾天也可以視情況對調喔。
                    </p>
                    <h3 style="margin-top:1.5em">行程地圖（地標 A B C E F）</h3>
-                   <p class="small">下面地圖可縮放、拖曳；點擊下方連結可個別開啟 Google 地圖。</p>
-                   <div class="map-embed-wrap">
-                     <iframe
-                       class="map-embed"
-                       src="https://www.google.com/maps?q=%E7%86%8A%E6%9C%AC%E5%9F%8E,%E8%8F%8A%E6%B1%A0%E5%85%AC%E5%9C%92,%E4%B8%80%E5%BF%83%E8%A1%8C%E5%A4%A7%E6%AB%BB,%E7%A7%8B%E6%9C%88%E5%9F%8E%E8%B7%A1,%E6%9F%B3%E5%B7%9D&output=embed"
-                       allowfullscreen=""
-                       loading="lazy"
-                       referrerpolicy="no-referrer-when-downgrade"
-                       title="九州櫻花行程地圖（熊本城・菊池公園・一心行大櫻・秋月城跡・柳川）">
-                     </iframe>
-                   </div>
+                   <p class="small">下面地圖已縮放至行程範圍；滑鼠移到標記上會顯示對應景點名稱。可縮放、拖曳。</p>
+                   <div id="trip-map" class="trip-map" aria-label="九州櫻花行程地圖"></div>
                    <ul class="map-legend">
                      <li><strong>A</strong> <a href="https://www.google.com/maps/search/%E7%86%8A%E6%9C%AC%E5%9F%8E" target="_blank" rel="noopener">熊本城</a></li>
                      <li><strong>B</strong> <a href="https://www.google.com/maps/search/%E8%8F%8A%E6%B1%A0%E5%85%AC%E5%9C%92" target="_blank" rel="noopener">菊池公園</a></li>
@@ -527,6 +519,29 @@
        <p class="small">我們兩個 · 九州櫻花</p>
      </div>
    </footer>
- </body>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script>
+    (function(){
+      var el = document.getElementById('trip-map');
+      if (!el) return;
+      var points = [
+        { id: 'A', name: '熊本城', lat: 32.8063, lng: 130.7071 },
+        { id: 'B', name: '菊池公園', lat: 32.9829, lng: 130.8179 },
+        { id: 'C', name: '一心行大櫻', lat: 32.8833, lng: 131.0333 },
+        { id: 'E', name: '秋月城跡', lat: 33.4667, lng: 130.7000 },
+        { id: 'F', name: '柳川遊船', lat: 33.1633, lng: 130.4011 }
+      ];
+      var map = L.map('trip-map', { scrollWheelZoom: true }).setView([33.0, 130.65], 9);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>' }).addTo(map);
+      var bounds = [];
+      points.forEach(function(p){
+        var m = L.marker([p.lat, p.lng]).addTo(map);
+        m.bindTooltip(p.id + '：' + p.name, { permanent: false, direction: 'top', className: 'trip-map-tooltip' });
+        bounds.push([p.lat, p.lng]);
+      });
+      if (bounds.length) map.fitBounds(bounds, { padding: [24, 24], maxZoom: 11 });
+    })();
+  </script>
+</body>
  </html>
  
