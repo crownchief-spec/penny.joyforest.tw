@@ -138,15 +138,18 @@
                    <p class="small">
                      櫻花每年開的時間不太一樣，我們有預留一點彈性；黑川或福岡那幾天也可以視情況對調喔。
                    </p>
-                   <h3 style="margin-top:1.5em">行程地圖（地標 A B C E F）</h3>
-                   <p class="small">下面地圖已縮放至行程範圍；滑鼠移到標記上會顯示對應景點名稱。可縮放、拖曳。</p>
+                   <h3 style="margin-top:1.5em">行程地圖（地標 A～H）</h3>
+                   <p class="small">下面地圖已縮放至行程範圍；滑鼠移到標記上會顯示對應景點名稱。每個點對應下方圖例。</p>
                    <div id="trip-map" class="trip-map" aria-label="九州櫻花行程地圖"></div>
                    <ul class="map-legend">
                      <li><strong>A</strong> <a href="https://www.google.com/maps/search/%E7%86%8A%E6%9C%AC%E5%9F%8E" target="_blank" rel="noopener">熊本城</a></li>
                      <li><strong>B</strong> <a href="https://www.google.com/maps/search/%E8%8F%8A%E6%B1%A0%E5%85%AC%E5%9C%92" target="_blank" rel="noopener">菊池公園</a></li>
                      <li><strong>C</strong> <a href="https://www.google.com/maps/search/%E4%B8%80%E5%BF%83%E8%A1%8C%E5%A4%A7%E6%AB%BB" target="_blank" rel="noopener">一心行大櫻</a></li>
+                     <li><strong>D</strong> <a href="https://www.google.com/maps/search/%E9%BB%92%E5%B7%9D%E6%B8%A9%E6%B3%89" target="_blank" rel="noopener">黑川溫泉</a></li>
                      <li><strong>E</strong> <a href="https://www.google.com/maps/search/%E7%A7%8B%E6%9C%88%E5%9F%8E%E8%B7%A1" target="_blank" rel="noopener">秋月城跡</a></li>
                      <li><strong>F</strong> <a href="https://www.google.com/maps/search/%E6%9F%B3%E5%B7%9D%E5%B7%9D%E4%B8%8B%E3%82%8A" target="_blank" rel="noopener">柳川遊船</a></li>
+                     <li><strong>G</strong> <a href="https://www.google.com/maps/search/%E5%BE%A1%E8%88%B9%E5%B1%B1%E6%A5%BD%E5%9C%92" target="_blank" rel="noopener">御船山樂園</a></li>
+                     <li><strong>H</strong> <a href="https://www.google.com/maps/search/%E7%A5%90%E5%BE%B3%E7%A8%BB%E8%8D%B7" target="_blank" rel="noopener">祐德稻荷</a></li>
                    </ul>
                  </div>
                </div>
@@ -530,8 +533,11 @@
         { id: 'A', name: '熊本城', lat: 32.8063, lng: 130.7071 },
         { id: 'B', name: '菊池公園', lat: 32.9829, lng: 130.8179 },
         { id: 'C', name: '一心行大櫻', lat: 32.8833, lng: 131.0333 },
+        { id: 'D', name: '黑川溫泉（奥の湯）', lat: 33.0500, lng: 131.0000 },
         { id: 'E', name: '秋月城跡', lat: 33.4667, lng: 130.7000 },
-        { id: 'F', name: '柳川遊船', lat: 33.1633, lng: 130.4011 }
+        { id: 'F', name: '柳川遊船', lat: 33.1633, lng: 130.4011 },
+        { id: 'G', name: '御船山樂園', lat: 33.1917, lng: 130.0231 },
+        { id: 'H', name: '祐德稻荷', lat: 33.1083, lng: 130.0986 }
       ];
       var map = L.map('trip-map', { scrollWheelZoom: true }).setView([33.0, 130.65], 9);
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>' }).addTo(map);
