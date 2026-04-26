@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="1200" height="680" role="img" aria-label="Chiang Mai trip schematic">
+  <defs>
+    <linearGradient id="g-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e3efe8"/>
+      <stop offset="0.5" stop-color="#f6f0e5"/>
+      <stop offset="1" stop-color="#ebe0d0"/>
+    </linearGradient>
+    <linearGradient id="g-hill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9cb894"/>
+      <stop offset="1" stop-color="#6d8a65"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="680" fill="url(#g-sky)" rx="8"/>
+  <rect x="1" y="1" width="1198" height="678" fill="none" stroke="#b8895b" stroke-opacity="0.28" stroke-width="2" rx="8"/>
+  <text x="600" y="40" text-anchor="middle" font-family="ui-sans-serif,system-ui,sans-serif" font-size="20" font-weight="800" fill="#3d2e20">Chiang Mai + Chiang Rai (schematic, not to scale)</text>
+  <text x="600" y="64" text-anchor="middle" font-size="12" font-family="ui-sans-serif,system-ui,sans-serif" fill="#5c5048">N = up | Same idea as the Kyushu hand-drawn map at the top of that page</text>
+  <g transform="translate(72 100)">
+    <circle r="30" fill="#fffcf5" stroke="#b8895b" stroke-width="1.5"/>
+    <text x="0" y="6" text-anchor="middle" font-size="20" font-weight="800" fill="#7a4a28" font-family="ui-sans-serif,system-ui,sans-serif">N</text>
+  </g>
+  <g id="north">
+    <rect x="430" y="90" width="340" height="120" rx="16" fill="#fffcf5" stroke="#b8895b" stroke-width="1.6" stroke-dasharray="3 2"/>
+    <text x="600" y="130" text-anchor="middle" font-size="20" font-weight="800" fill="#3d2e20" font-family="ui-sans-serif,system-ui,sans-serif">E</text>
+    <text x="600" y="160" text-anchor="middle" font-size="12" fill="#5c5048" font-family="ui-sans-serif,system-ui,sans-serif">Chiang Rai (day trip)</text>
+    <g transform="translate(600 182)">
+      <path d="M-32 0 L0 -36 L32 0 L26 0 L24 32 L-24 32 L-26 0 Z" fill="#faf8f2" stroke="#9aa4ad" stroke-width="1"/>
+    </g>
+  </g>
+  <text x="600" y="82" text-anchor="middle" font-size="11" font-weight="700" fill="#7a4a28" font-family="ui-sans-serif,system-ui,sans-serif">3h drive (approx.) to Chiang Rai</text>
+  <line x1="600" y1="220" x2="600" y2="265" stroke="#b8895b" stroke-width="2" stroke-dasharray="7 5" stroke-linecap="round" opacity="0.85"/>
+  <ellipse cx="600" cy="410" rx="400" ry="195" fill="#fffcf5" fill-opacity="0.92" stroke="#b8895b" stroke-width="2" stroke-opacity="0.4"/>
+  <text x="600" y="255" text-anchor="middle" font-size="15" font-weight="800" fill="#3d2e20" font-family="ui-sans-serif,system-ui,sans-serif">Chiang Mai area</text>
+  <text x="600" y="275" text-anchor="middle" font-size="12" fill="#6b5c4d" font-family="ui-sans-serif,system-ui,sans-serif">A-D within ~30 min by car (rough)</text>
+  <path d="M 300 400 Q 450 360 600 400 T 900 390" fill="none" stroke="#4a8eb8" stroke-width="5" stroke-linecap="round" opacity="0.45"/>
+  <text x="320" y="355" font-size="12" font-weight="800" fill="#3a6a8a" font-family="ui-sans-serif,system-ui,sans-serif">Ping River</text>
+  <g>
+    <text x="330" y="355" text-anchor="middle" font-size="12" font-weight="800" fill="#7a4a28" font-family="ui-sans-serif,system-ui,sans-serif">A CNX</text>
+    <circle cx="330" cy="405" r="36" fill="#fff" stroke="#b8895b" stroke-width="1.8"/>
+    <g transform="translate(330 402)">
+      <path d="M-16 -2h32l-8 6h-8l6 5h-6l-6-5h-6z" fill="#5c4a3a" opacity="0.85"/>
+    </g>
+  </g>
+  <g>
+    <text x="520" y="318" text-anchor="middle" font-size="12" font-weight="800" fill="#7a4a28" font-family="ui-sans-serif,system-ui,sans-serif">B Old City / Gate</text>
+    <circle cx="520" cy="380" r="40" fill="#fff" stroke="#b8895b" stroke-width="1.8"/>
+    <g transform="translate(520 378)">
+      <path d="M-18 10L0-16L18 10L18 18L-18 18Z" fill="#c9a574" stroke="#7a4a28" stroke-width="0.8"/>
+    </g>
+  </g>
+  <g>
+    <text x="710" y="300" text-anchor="middle" font-size="12" font-weight="800" fill="#7a4a28" font-family="ui-sans-serif,system-ui,sans-serif">C MAYA</text>
+    <circle cx="700" cy="350" r="32" fill="#fff" stroke="#b8895b" stroke-width="1.8"/>
+    <g transform="translate(700 348)">
+      <rect x="-18" y="-12" width="36" height="24" fill="#b8895b" fill-opacity="0.35" rx="2"/>
+    </g>
+  </g>
+  <g>
+    <text x="700" y="450" text-anchor="middle" font-size="12" font-weight="800" fill="#7a4a28" font-family="ui-sans-serif,system-ui,sans-serif">D Night Safari</text>
+    <circle cx="680" cy="480" r="36" fill="#fff" stroke="#b8895b" stroke-width="1.8"/>
+    <g transform="translate(680 478)">
+      <circle r="20" fill="#1e2a38"/>
+      <circle cx="4" cy="-3" r="6" fill="#e8d89a" opacity="0.95"/>
+    </g>
+  </g>
+  <g>
+    <path d="M 200 300 Q 150 400 200 500 Q 300 480 360 400 Q 380 300 300 280 Q 250 280 200 300 Z" fill="url(#g-hill)" stroke="#5a7a52" stroke-width="1.2" opacity="0.88"/>
+    <text x="240" y="360" text-anchor="middle" font-size="12" font-weight="800" fill="#fff" style="text-shadow:0 0 2px #2a3a25" font-family="ui-sans-serif,system-ui,sans-serif">F</text>
+    <text x="240" y="380" text-anchor="middle" font-size="10" fill="#f6f0e4" font-family="ui-sans-serif,system-ui,sans-serif">Hills: elephant, zipline</text>
+  </g>
+  <g fill="none" stroke="#9a6a40" stroke-width="1.4" stroke-dasharray="4 3" stroke-opacity="0.5">
+    <line x1="330" y1="420" x2="490" y2="385"/>
+    <line x1="560" y1="365" x2="675" y2="335"/>
+    <line x1="540" y1="400" x2="670" y2="455"/>
+  </g>
+  <g transform="translate(600 400)">
+    <rect x="-22" y="-6" width="44" height="16" rx="3" fill="#b8895b" stroke="#5c3a1a" stroke-width="0.8"/>
+    <circle cx="-12" cy="12" r="5" fill="#2a2a2a"/>
+    <circle cx="12" cy="12" r="5" fill="#2a2a2a"/>
+  </g>
+  <g transform="translate(600 635)">
+    <rect x="-280" y="-28" width="560" height="36" fill="#fffcf5" stroke="#b8895b" stroke-opacity="0.5" stroke-width="1" rx="8" opacity="0.95"/>
+    <text x="0" y="-2" text-anchor="middle" font-size="10" fill="#4a3a2a" font-weight="600" font-family="ui-sans-serif,system-ui,sans-serif">A-F labels | blue curve: river | brown dashes: local hops</text>
+  </g>
+</svg>
