@@ -374,30 +374,37 @@
    text-align:center; margin:0 0 24px; max-width:52ch; margin-inline:auto;
    font-size:15px; line-height:1.75; color:var(--muted)
  }
- /* 10 列×2 欄：R1 去程、R2–9 每日（左住宿右行程）、R10 回程（row-based，不獨捲） */
- .aligned-itinerary-section{
+ /* 10 列×2 欄：R1 去程、R2–9 每日（左住宿右行程）、R10 回程；語意 <table> + 兩欄 td */
+ .itinerary-matrix-wrap{
    width:100%;
    min-width:0;
- }
- .aligned-itinerary-header,
- .aligned-itinerary-section .itinerary-row{
-   display:grid;
-   grid-template-columns:minmax(260px, 0.85fr) minmax(0, 1.8fr);
-   gap:16px;
-   align-items:stretch;
-   width:100%;
-   min-width:0;
+   overflow-x:auto;
+   -webkit-overflow-scrolling:touch;
    box-sizing:border-box;
  }
- .aligned-itinerary-header{
-   margin:0 0 8px; padding:0 0 10px; border-bottom:1px solid var(--line)
+ .itinerary-matrix{
+   width:100%;
+   min-width:0;
+   border-collapse:separate;
+   border-spacing:0 18px;
+   table-layout:fixed;
+   box-sizing:border-box;
  }
- .aligned-itinerary-section .itinerary-col-title{
+ .itinerary-matrix .itinerary-matrix__colhead{
    margin:0; font-size:clamp(16px,1.5vw,19px);
    font-weight:800; color:var(--wood-dark); letter-spacing:.02em; line-height:1.2;
+   text-align:left; vertical-align:bottom;
+   padding:0 0 10px; border-bottom:1px solid var(--line);
+   box-sizing:border-box;
  }
- .aligned-itinerary-section .itinerary-row{ margin:0 0 18px }
- .aligned-itinerary-section .itinerary-row:last-of-type{ margin-bottom:0 }
+ .itinerary-matrix thead th:first-child{ width:34%; }
+ .itinerary-matrix thead th:last-child{ width:66%; }
+ .itinerary-matrix tbody .itinerary-matrix__stay{
+   padding:0 8px 0 0; width:34%; vertical-align:top; box-sizing:border-box;
+ }
+ .itinerary-matrix tbody .itinerary-matrix__plan{
+   padding:0 0 0 8px; width:66%; vertical-align:top; box-sizing:border-box;
+ }
  .stay-transport-cell,
  .daily-plan-cell{
    min-width:0; max-width:100%;
@@ -408,6 +415,22 @@
    box-sizing:border-box;
  }
  .daily-plan-cell{ background:#fff }
+ .itinerary-matrix__plan .day-card.day-card--in-matrix,
+ .itinerary-matrix .daily-plan-cell .day-card.day-card--in-matrix{
+   background:transparent; border:none; box-shadow:none; border-radius:0;
+   min-width:0; width:100%;
+   min-height:100%;
+   display:flex; flex-direction:column;
+   overflow:visible;
+ }
+ .itinerary-matrix__plan .day-card--in-matrix .day-card__head,
+ .itinerary-matrix .daily-plan-cell .day-card--in-matrix .day-card__head{ padding-top:0 }
+ .itinerary-matrix__plan .day-card--in-matrix .day-card__foot,
+ .itinerary-matrix .daily-plan-cell .day-card--in-matrix .day-card__foot{ margin-top:auto }
+ .itinerary-matrix__plan img,
+ .itinerary-matrix .daily-plan-cell img{
+   max-width:100%; height:auto; box-sizing:border-box;
+ }
  .daily-plan-cell--edge{
    background:#faf6ee; font-size:14px; line-height:1.6; color:var(--text);
  }
@@ -430,60 +453,55 @@
    margin:0 0 8px; font-size:14px; line-height:1.6; color:var(--text);
  }
  .stay-transport__body p:last-child{ margin-bottom:0 }
- .aligned-itinerary-section .daily-plan-cell .day-card.day-card--in-aligned-row{
-   background:transparent; border:none; box-shadow:none; border-radius:0;
-   min-width:0; width:100%;
-   min-height:100%;
-   display:flex; flex-direction:column;
-   overflow:visible;
- }
- .aligned-itinerary-section .daily-plan-cell .day-card__head{ padding-top:0 }
- .aligned-itinerary-section .daily-plan-cell .day-card__foot{ margin-top:auto }
- .aligned-itinerary-section .daily-plan-cell img{
-   max-width:100%; height:auto; box-sizing:border-box;
- }
  @media (max-width: 1024px) and (min-width: 769px){
-   .aligned-itinerary-header,
-   .aligned-itinerary-section .itinerary-row{
-     grid-template-columns:minmax(200px, 0.82fr) minmax(0, 1.2fr);
-     gap:12px
-   }
+   .itinerary-matrix thead th:first-child{ width:36%; }
+   .itinerary-matrix thead th:last-child{ width:64%; }
+   .itinerary-matrix tbody .itinerary-matrix__stay{ padding-right:6px; width:36%; }
+   .itinerary-matrix tbody .itinerary-matrix__plan{ padding-left:6px; width:64%; }
    .stay-transport-cell,
    .daily-plan-cell{ padding:16px 18px; border-radius:20px }
  }
  @media (max-width: 768px){
-   .aligned-itinerary-header{ display:none !important }
-   .aligned-itinerary-section .itinerary-row{
-     display:grid;
-     grid-template-columns:1fr;
-     gap:10px;
-     margin:0 0 22px;
-     align-items:stretch;
+   .itinerary-matrix thead{
+     position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0);
+     white-space:nowrap; border:0
    }
-   .aligned-itinerary-section .itinerary-row:last-of-type{ margin-bottom:0 }
-   .stay-transport-cell::before,
-   .daily-plan-cell::before{
-     display:block; font-size:0.82rem; font-weight:700; margin-bottom:8px; color:#9a6a3f;
+   .itinerary-matrix{ border-spacing:0 0; display:block; }
+   .itinerary-matrix caption{ display:none }
+   .itinerary-matrix tbody{ display:block; }
+   .itinerary-matrix tbody tr{
+     display:block; margin:0 0 22px; width:100%;
    }
-   .stay-transport-cell--outbound::before{ content:"去程機票" }
-   .stay-transport-cell--return::before{ content:"回程機票" }
-   .stay-transport-cell:not(.stay-transport-cell--outbound):not(.stay-transport-cell--return)::before{ content:"住宿" }
-   .daily-plan-cell--edge::before{ content:"說明" }
-   .daily-plan-cell:not(.daily-plan-cell--edge)::before{ content:"每日安排" }
+   .itinerary-matrix tbody tr:last-child{ margin-bottom:0 }
+   .itinerary-matrix__stay,
+   .itinerary-matrix__plan{
+     display:block; width:100% !important; max-width:100% !important;
+     padding:0 0 10px 0;
+     box-sizing:border-box;
+   }
+   .itinerary-matrix__plan{ padding:0; padding-top:0 }
+   .itinerary-matrix__stay::before,
+   .itinerary-matrix__plan::before{
+     display:block; font-size:0.82rem; font-weight:700; margin:0 0 8px; color:#9a6a3f;
+   }
+   .itinerary-matrix__stay::before{ content:attr(data-mobile-label) }
+   .itinerary-matrix__plan::before{ content:attr(data-mobile-label) }
+   .itinerary-matrix .stay-transport-cell::before,
+   .itinerary-matrix .daily-plan-cell::before{ content:none !important; display:none !important }
    .stay-transport-cell,
    .daily-plan-cell{ padding:16px; border-radius:18px }
-   .itinerary-main-section .day-card--in-aligned-row .day-card__head{ padding:0 0 0; gap:8px }
-   .itinerary-main-section .day-card--in-aligned-row .day-card__foot{ padding:10px; gap:6px }
-   .itinerary-main-section .day-card--in-aligned-row .day-card__title{ font-size:12px; line-height:1.25; word-break:break-word; overflow-wrap:anywhere }
-   .itinerary-main-section .day-card--in-aligned-row .day-intensity{ font-size:8px; padding:2px 6px; letter-spacing:0 }
-   .itinerary-main-section .day-card--in-aligned-row .day-card__thumb{ flex:0 0 56px; width:56px; height:44px; border-radius:8px }
-   .itinerary-main-section .day-card--in-aligned-row .lodge-pill,
-   .itinerary-main-section .day-card--in-aligned-row .day-pill{ font-size:9px; padding:1px 6px }
-   .itinerary-main-section .day-card--in-aligned-row .day-card__desc{ font-size:11px; line-height:1.5 }
-   .itinerary-main-section .day-card--in-aligned-row .day-card__foot a{ font-size:10px; padding:5px 8px }
-   .aligned-itinerary-section .daily-plan-cell img{ width:100% }
+   .itinerary-main-section .day-card--in-matrix .day-card__head{ padding:0 0 0; gap:8px }
+   .itinerary-main-section .day-card--in-matrix .day-card__foot{ padding:10px; gap:6px }
+   .itinerary-main-section .day-card--in-matrix .day-card__title{ font-size:12px; line-height:1.25; word-break:break-word; overflow-wrap:anywhere }
+   .itinerary-main-section .day-card--in-matrix .day-intensity{ font-size:8px; padding:2px 6px; letter-spacing:0 }
+   .itinerary-main-section .day-card--in-matrix .day-card__thumb{ flex:0 0 56px; width:56px; height:44px; border-radius:8px }
+   .itinerary-main-section .day-card--in-matrix .lodge-pill,
+   .itinerary-main-section .day-card--in-matrix .day-pill{ font-size:9px; padding:1px 6px }
+   .itinerary-main-section .day-card--in-matrix .day-card__desc{ font-size:11px; line-height:1.5 }
+   .itinerary-main-section .day-card--in-matrix .day-card__foot a{ font-size:10px; padding:5px 8px }
+   .itinerary-matrix .daily-plan-cell img{ width:100% }
  }
- .itinerary-main-section .aligned-itinerary-section .day-card__title{ word-break:break-word; overflow-wrap:anywhere }
+ .itinerary-main-section .itinerary-matrix .day-card__title{ word-break:break-word; overflow-wrap:anywhere }
  .itinerary-spine-line{
    margin:0; color:var(--muted); font-size:12px; line-height:1.45;
  }
