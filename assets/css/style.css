@@ -279,3 +279,15 @@
    .spot-card__img{aspect-ratio:16/9; min-height:220px}
    .spot-card__body{padding:18px 20px 20px}
  }
+
+ /* Markdown 文章（chiang-mai-day 動態載入） */
+ .md-article{max-width:720px; margin:0 auto}
+ .md-article h1{font-size:clamp(24px,3vw,34px); margin:0 0 12px; line-height:1.2}
+ .md-article h2{font-size:clamp(18px,2vw,22px); margin:1.4em 0 10px; padding-bottom:6px; border-bottom:1px solid var(--line)}
+ .md-article p,.md-article li{font-size:16px; line-height:1.7}
+ .md-article ul{padding-left:1.2em}
+ .md-article img{max-width:100%; height:auto; border-radius:var(--r2); border:1px solid var(--line); display:block; margin:16px 0}
+ .md-article .meta-line{font-size:14px; color:var(--muted); margin-bottom:1.2em}
+ .day-nav-bar{display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between; margin:24px 0 0; padding-top:20px; border-top:1px solid var(--line); font-size:14px}
+ .day-nav-bar a{color:var(--wood-dark); font-weight:700; text-decoration:none}
+ .day-nav-bar a:hover{text-decoration:underline}

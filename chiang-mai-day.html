@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>清邁行程日誌｜單日</title>
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body class="seo-article">
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav" aria-label="主導覽">
+        <a class="brand" href="index.html">
+          <span>我們的小旅行</span>
+        </a>
+        <div class="menu">
+          <a href="index.html">首頁</a>
+          <a href="chiang-mai.html">清邁總覽</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section tight">
+      <div class="container">
+        <article class="md-article" id="md-root">
+          <p class="small" id="md-status">載入行程筆記中…</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="small" style="margin:0">清邁／清萊 · 單日日誌（Markdown）</p>
+    </div>
+  </footer>
+
+  <script>
+(function () {
+  var FILES = {
+    '01': 'day-01-11-24-loy-krathong.md',
+    '02': 'day-02-11-25-yi-peng.md',
+    '03': 'day-03-11-26-parade-night-safari.md',
+    '04': 'day-04-11-27-chiang-rai.md',
+    '05': 'day-05-11-28-elephant.md',
+    '06': 'day-06-11-29-zipline.md',
+    '07': 'day-07-11-30-cooking-market.md',
+    '08': 'day-08-12-01-return.md'
+  };
+  var ORDER = ['01', '02', '03', '04', '05', '06', '07', '08'];
+  var params = new URLSearchParams(window.location.search);
+  var day = (params.get('day') || '01').padStart(2, '0');
+  if (!FILES[day]) day = '01';
+
+  var base = 'content/chiang-mai/days/' + FILES[day];
+  var el = document.getElementById('md-root');
+  var status = document.getElementById('md-status');
+
+  var idx = ORDER.indexOf(day);
+  var prevD = idx > 0 ? ORDER[idx - 1] : null;
+  var nextD = idx < ORDER.length - 1 ? ORDER[idx + 1] : null;
+
+  function navHtml() {
+    var h = '<div class="day-nav-bar">';
+    h += prevD
+      ? '<a href="chiang-mai-day.html?day=' + prevD + '">← 第 ' + (+prevD) + ' 天</a>'
+      : '<span></span>';
+    h += '<a href="chiang-mai.html">回清邁總覽</a>';
+    h += nextD
+      ? '<a href="chiang-mai-day.html?day=' + nextD + '">第 ' + (+nextD) + ' 天 →</a>'
+      : '<span></span>';
+    h += '</div>';
+    return h;
+  }
+
+  if (location.protocol === 'file:') {
+    status.textContent = '此頁需用本機伺服器或上線後才讀得到 Markdown 檔（file:// 無法 fetch）。請在專案目錄執行 npx serve 或從同一網域開啟。';
+    return;
+  }
+
+  fetch(base)
+    .then(function (r) {
+      if (!r.ok) throw new Error(r.status);
+      return r.text();
+    })
+    .then(function (text) {
+      if (typeof marked === 'undefined' || !marked.parse) {
+        throw new Error('marked not loaded');
+      }
+      el.innerHTML = marked.parse(text) + navHtml();
+      if (el.querySelector('h1')) {
+        document.title = el.querySelector('h1').textContent + '｜清邁行程';
+      }
+    })
+    .catch(function (e) {
+      status.textContent = '無法載入 ' + base + '：' + (e && e.message ? e.message : e);
+    });
+})();
+  </script>
+</body>
+</html>
