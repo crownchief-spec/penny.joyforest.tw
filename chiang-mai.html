@@ -178,9 +178,16 @@
             <section class="section tight section--spots" id="spots">
               <div class="container">
                 <h2>每日筆記（Markdown 檔案）</h2>
-                <p class="spots-intro">每則內文檔在 <code>content/chiang-mai/days/*.md</code>，要改文案或換照片路徑直接編輯該檔最方便。下方卡片連到同一份內容的閱讀頁。</p>
-                <div class="spot-cards">
-                  <article class="spot-card">
+                <p class="spots-intro">每則內文檔在 <code>content/chiang-mai/days/*.md</code>，要改文案或換照片路徑直接編輯該檔最方便。下方面板<strong>左欄</strong>以兩段住宿對齊天數、<strong>右欄</strong>為每日行程與讀筆記連結（寬螢幕為兩欄，窄螢幕改為上／下敘述）。</p>
+                <div class="spot-cards spot-cards--itinerary" aria-label="兩段住宿與第 1–8 天筆記">
+                  <div class="spot-stay spot-stay--old">
+                    <p class="spot-stay__label">第一段 · 清邁古城</p>
+                    <p class="spot-stay__range">D1 – D4 · 11/24 入住 ～ 11/28 上午退房</p>
+                    <h3 class="spot-stay__name">莫客房飯店 Mo Rooms Hotel</h3>
+                    <p class="spot-stay__where">塔佩路／塔佩門一帶，方便水燈與天燈活動。Agoda 訂單 1721798330。</p>
+                    <p class="spot-stay__note">住宿細節與實景照在 <a href="chiang-mai-day.html?day=01">第 1 天筆記</a> 內文。</p>
+                  </div>
+                  <article class="spot-card spot-card--day01">
                     <div class="spot-card__img">
                       <img src="assets/images/chiang-mai/S__104144907_0-134a5df8-9de3-4d92-96e9-3c8d222864e5.png" alt="水燈與塔佩門" loading="lazy" />
                     </div>
@@ -188,7 +195,7 @@
                       <div>
                         <p class="spot-card__meta">Day 1 · 11/24</p>
                         <h3 class="spot-card__title">水燈節 · 抵達與放水燈</h3>
-                        <p class="spot-card__desc">Ping River、Tha Phae Gate。前段住宿已訂<strong>莫客房飯店</strong>（塔佩路；Agoda 訂單 1721798330），內文有裁切實景照。</p>
+                        <p class="spot-card__desc">Ping River、Tha Phae Gate、放水燈。住宿摘要見左欄，筆記內有<strong>莫客房</strong>實景與當天細節。</p>
                       </div>
                       <div class="spot-card__links">
                         <a href="chiang-mai-day.html?day=01">讀筆記</a>
@@ -196,7 +203,7 @@
                       </div>
                     </div>
                   </article>
-                  <article class="spot-card">
+                  <article class="spot-card spot-card--day02">
                     <div class="spot-card__img">
                       <img src="assets/images/chiang-mai/S__104144908_0-23185aaa-9a3a-471e-8a86-4867e5177276.png" alt="天燈與 MAYA" loading="lazy" />
                     </div>
@@ -212,7 +219,7 @@
                       </div>
                     </div>
                   </article>
-                  <article class="spot-card">
+                  <article class="spot-card spot-card--day03">
                     <div class="spot-card__img">
                       <img src="assets/images/chiang-mai/S__104144909_0-fa374c15-2ec9-4b8d-8108-dde55f34269f.png" alt="遊行與夜間慶典" loading="lazy" />
                     </div>
@@ -228,7 +235,7 @@
                       </div>
                     </div>
                   </article>
-                  <article class="spot-card">
+                  <article class="spot-card spot-card--day04">
                     <div class="spot-card__img">
                       <img src="assets/images/chiang-mai/S__104144910_0-476d8f2b-e5ab-469b-84f7-dd583c731d98.png" alt="清萊廟與大象" loading="lazy" />
                     </div>
@@ -244,7 +251,14 @@
                       </div>
                     </div>
                   </article>
-                  <article class="spot-card">
+                  <div class="spot-stay spot-stay--maya">
+                    <p class="spot-stay__label">第二段 · 寧曼與瑪雅商圈</p>
+                    <p class="spot-stay__range">D5 – D8 · 11/28 午後 ～ 12/1 離境</p>
+                    <h3 class="spot-stay__name">MAYA 購物中心／寧曼一帶</h3>
+                    <p class="spot-stay__where">第 5 天上午自古城帶行李<strong>換宿</strong>至此，其後至出國前皆以此區為下榻點。飯店名稱、訂位可寫在 <a href="chiang-mai-day.html?day=05">第 5 天筆記</a> 或待補欄位。</p>
+                    <p class="spot-stay__note">第 5 天筆記內有「本日住宿與移動」可對照大行李搬運。</p>
+                  </div>
+                  <article class="spot-card spot-card--day05">
                     <div class="spot-card__img">
                       <img src="assets/images/chiang-mai/S__104144913_0-f37c4b7d-f4ae-4427-a812-24d8638e98bd.png" alt="廚藝與市集參考" loading="lazy" />
                     </div>
@@ -260,7 +274,7 @@
                       </div>
                     </div>
                   </article>
-                  <article class="spot-card">
+                  <article class="spot-card spot-card--day06">
                     <div class="spot-card__img">
                       <img src="assets/images/chiang-mai/elephant-jungle-sanctuary-full-day-promo.png" alt="Elephant Jungle Sanctuary 全日體驗" loading="lazy" />
                     </div>
@@ -276,7 +290,7 @@
                       </div>
                     </div>
                   </article>
-                  <article class="spot-card">
+                  <article class="spot-card spot-card--day07">
                     <div class="spot-card__img">
                       <img src="assets/images/chiang-mai/S__104144912_0-c8c37c7b-804c-4266-b8eb-7a4f888958e9.png" alt="高空繩索與市集" loading="lazy" />
                     </div>
@@ -292,7 +306,7 @@
                       </div>
                     </div>
                   </article>
-                  <article class="spot-card">
+                  <article class="spot-card spot-card--day08">
                     <div class="spot-card__img">
                       <img src="assets/images/chiang-mai/S__104144913_0-f37c4b7d-f4ae-4427-a812-24d8638e98bd.png" alt="回程" loading="lazy" />
                     </div>
