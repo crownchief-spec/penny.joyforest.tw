@@ -374,112 +374,109 @@
    text-align:center; margin:0 0 24px; max-width:52ch; margin-inline:auto;
    font-size:15px; line-height:1.75; color:var(--muted)
  }
- /* 每日一列兩欄：左交通住宿摘要 + 右當日行程，整區同步捲動（無 sticky 獨捲右欄） */
- .itinerary-browse{
+ /* 8 列×2 欄行程表：每列同日左住宿交通、右行程（row-based，不獨捲、非雙欄各一列表） */
+ .aligned-itinerary-section{
    width:100%;
    min-width:0;
  }
- .itinerary-browse__row{
+ .aligned-itinerary-header,
+ .aligned-itinerary-section .itinerary-row{
    display:grid;
-   grid-template-columns:minmax(120px, 34%) minmax(0, 66%);
+   grid-template-columns:minmax(260px, 0.85fr) minmax(0, 1.8fr);
    gap:16px;
-   align-items:start;
+   align-items:stretch;
    width:100%;
    min-width:0;
    box-sizing:border-box;
-   margin:0 0 20px;
  }
- .itinerary-browse__row:last-of-type{
-   margin-bottom:0
+ .aligned-itinerary-header{
+   margin:0 0 8px; padding:0 0 10px; border-bottom:1px solid var(--line)
  }
- .itinerary-browse__row--head{
-   margin:0 0 16px; padding:0 0 12px; border-bottom:1px solid var(--line);
-   gap:12px
+ .aligned-itinerary-section .itinerary-col-title{
+   margin:0; font-size:clamp(16px,1.5vw,19px);
+   font-weight:800; color:var(--wood-dark); letter-spacing:.02em; line-height:1.2;
  }
- .itinerary-browse__row--head .itinerary-left__heading,
- .itinerary-browse__row--head .itinerary-right__heading{
-   margin:0; align-self:center
- }
- .itinerary-pair__left,
- .itinerary-pair__right{
-   min-width:0;
-   max-width:100%;
- }
- .itinerary-pair__left{
-   line-height:1.5;
-   font-size:14px
- }
- .itinerary-pair__right .day-card{
-   width:100%;
-   min-width:0
- }
- .itinerary-left__heading,
- .itinerary-right__heading{
-   font-size:clamp(16px,1.5vw,18px); color:var(--wood-dark);
-   font-weight:800; letter-spacing:.02em;
- }
- .itinerary-main-section .itinerary-pair__right img,
- .itinerary-main-section .itinerary-pair__right iframe,
- .itinerary-main-section .itinerary-pair__right .trip-map,
- .itinerary-main-section .itinerary-pair__right .day-card,
- .itinerary-main-section .itinerary-pair__right .card{
-   max-width:100%;
+ .aligned-itinerary-section .itinerary-row{ margin:0 0 18px }
+ .aligned-itinerary-section .itinerary-row:last-of-type{ margin-bottom:0 }
+ .stay-transport-cell,
+ .daily-plan-cell{
+   min-width:0; max-width:100%;
+   border-radius:24px;
+   border:1px solid rgba(160,120,80,.18);
+   background:#fffaf2;
+   padding:22px;
    box-sizing:border-box;
  }
- .itinerary-main-section .itinerary-pair__right img{height:auto}
+ .daily-plan-cell{ background:#fff }
+ .stay-transport__tag{
+   margin:0 0 8px; font-size:11px; font-weight:800; letter-spacing:.06em;
+   text-transform:uppercase; color:var(--wood-dark);
+ }
+ .stay-transport__title{
+   margin:0 0 6px; font-size:clamp(15px,1.2vw,17px);
+   font-weight:800; line-height:1.3; color:var(--text);
+ }
+ .stay-transport__date{
+   margin:0 0 10px; font-size:13px; font-weight:700; color:var(--wood-dark);
+ }
+ .stay-transport__body p{
+   margin:0 0 8px; font-size:14px; line-height:1.6; color:var(--text);
+ }
+ .stay-transport__body p:last-child{ margin-bottom:0 }
+ .aligned-itinerary-section .daily-plan-cell .day-card.day-card--in-aligned-row{
+   background:transparent; border:none; box-shadow:none; border-radius:0;
+   min-width:0; width:100%;
+   min-height:100%;
+   display:flex; flex-direction:column;
+   overflow:visible;
+ }
+ .aligned-itinerary-section .daily-plan-cell .day-card__head{ padding-top:0 }
+ .aligned-itinerary-section .daily-plan-cell .day-card__foot{ margin-top:auto }
+ .aligned-itinerary-section .daily-plan-cell img{
+   max-width:100%; height:auto; box-sizing:border-box;
+ }
+ @media (max-width: 1024px) and (min-width: 769px){
+   .aligned-itinerary-header,
+   .aligned-itinerary-section .itinerary-row{
+     grid-template-columns:minmax(200px, 0.82fr) minmax(0, 1.2fr);
+     gap:12px
+   }
+   .stay-transport-cell,
+   .daily-plan-cell{ padding:16px 18px; border-radius:20px }
+ }
  @media (max-width: 768px){
-   .itinerary-browse__row{
-     display:grid !important;
-     grid-template-columns:minmax(96px, 36%) minmax(0, 64%) !important;
-     gap:10px !important;
+   .aligned-itinerary-header{ display:none !important }
+   .aligned-itinerary-section .itinerary-row{
+     display:grid;
+     grid-template-columns:1fr;
+     gap:10px;
+     margin:0 0 22px;
+     align-items:stretch;
    }
-   .itinerary-pair__left{
-     font-size:13px;
-     line-height:1.5;
+   .aligned-itinerary-section .itinerary-row:last-of-type{ margin-bottom:0 }
+   .stay-transport-cell::before,
+   .daily-plan-cell::before{
+     content:"住宿與交通";
+     display:block; font-size:0.82rem; font-weight:700; margin-bottom:8px; color:#9a6a3f;
    }
-   .itinerary-pair__right{
-     font-size:13px;
-     line-height:1.55;
-   }
-   .itinerary-browse__row--head .itinerary-left__heading,
-   .itinerary-browse__row--head .itinerary-right__heading,
-   .itinerary-main-section .itinerary-left__heading,
-   .itinerary-main-section .itinerary-right__heading{
-     font-size:15px;
-   }
-   .itinerary-main-section .itinerary-pair__card,
-   .itinerary-main-section .itinerary-pair__right .day-card,
-   .itinerary-main-section .itinerary-spine-card{
-     padding:10px;
-     border-radius:12px;
-   }
-   .itinerary-main-section .itinerary-pair__right img,
-   .itinerary-main-section .itinerary-pair__right iframe{
-     width:100%;
-     max-width:100%;
-     height:auto;
-   }
-   .itinerary-main-section .day-card__head{padding:10px 10px 0; gap:8px}
-   .itinerary-main-section .day-card__foot{padding:10px; gap:6px}
-   .itinerary-main-section .day-card__title{font-size:12px; line-height:1.25; word-break:break-word; overflow-wrap:anywhere}
-   .itinerary-main-section .day-intensity{font-size:8px; padding:2px 6px; letter-spacing:0}
-   .itinerary-main-section .day-card__thumb{flex:0 0 52px; width:52px; height:40px; border-radius:8px}
-   .itinerary-main-section .lodge-pill,
-   .itinerary-main-section .day-pill{font-size:9px; padding:1px 6px}
-   .itinerary-main-section .day-card__desc{font-size:11px; line-height:1.5}
-   .itinerary-main-section .day-card__foot a{font-size:10px; padding:5px 8px}
+   .daily-plan-cell::before{ content:"每日安排" }
+   .stay-transport-cell,
+   .daily-plan-cell{ padding:16px; border-radius:18px }
+   .itinerary-main-section .day-card--in-aligned-row .day-card__head{ padding:0 0 0; gap:8px }
+   .itinerary-main-section .day-card--in-aligned-row .day-card__foot{ padding:10px; gap:6px }
+   .itinerary-main-section .day-card--in-aligned-row .day-card__title{ font-size:12px; line-height:1.25; word-break:break-word; overflow-wrap:anywhere }
+   .itinerary-main-section .day-card--in-aligned-row .day-intensity{ font-size:8px; padding:2px 6px; letter-spacing:0 }
+   .itinerary-main-section .day-card--in-aligned-row .day-card__thumb{ flex:0 0 56px; width:56px; height:44px; border-radius:8px }
+   .itinerary-main-section .day-card--in-aligned-row .lodge-pill,
+   .itinerary-main-section .day-card--in-aligned-row .day-pill{ font-size:9px; padding:1px 6px }
+   .itinerary-main-section .day-card--in-aligned-row .day-card__desc{ font-size:11px; line-height:1.5 }
+   .itinerary-main-section .day-card--in-aligned-row .day-card__foot a{ font-size:10px; padding:5px 8px }
+   .aligned-itinerary-section .daily-plan-cell img{ width:100% }
  }
- .itinerary-main-section .day-card__title{word-break:break-word; overflow-wrap:anywhere}
+ .itinerary-main-section .aligned-itinerary-section .day-card__title{ word-break:break-word; overflow-wrap:anywhere }
  .itinerary-spine-line{
    margin:0; color:var(--muted); font-size:12px; line-height:1.45;
  }
- .itinerary-main-section .itinerary-pair__left .itinerary-spine-card{gap:6px; padding:12px 12px 14px; font-size:12px; line-height:1.4}
- @media (min-width: 769px){
-   .itinerary-main-section .itinerary-pair__left .itinerary-spine-card{font-size:13px; line-height:1.5}
- }
- .itinerary-main-section .itinerary-pair__left .itinerary-spine-title{font-size:13px; line-height:1.25; word-break:break-word; overflow-wrap:anywhere}
- .itinerary-main-section .itinerary-pair__left .itinerary-spine-date{font-size:11px}
- .itinerary-main-section .itinerary-pair__left .itinerary-spine-label{font-size:9px; padding:2px 8px}
  .itinerary-timeline{list-style:none; margin:0; padding:0; position:relative}
  .itinerary-timeline > li{position:relative; padding:0 0 20px 22px; margin:0}
  .itinerary-timeline > li:last-child{padding-bottom:0}

@@ -86,7 +86,7 @@
                     <h4>1. 班機確認</h4>
                     <ul>
                       <li>去程航班、起飛時間、抵達時間待補（以訂位信與航空公司為準）。</li>
-                      <li>回程 <strong>BR258</strong> 已整理在下方「行程主軸與每日安排」左欄之交通主軸。</li>
+                      <li>回程 <strong>BR258</strong> 已整理在下方「行程主軸與每日安排」之八日對照表左欄（依日期）。</li>
                     </ul>
                   </div>
                   <div class="cm-checklist__block">
@@ -312,24 +312,24 @@
             <section class="section tight section--spots itinerary-main-section" id="spots">
               <div class="container">
                 <h2 class="itinerary-main-section__title">行程主軸與每日安排</h2>
-                <p class="itinerary-section-lead itinerary-main-section__lead">每一天一列兩欄：左欄是當天住宿與交通摘要，右欄是當日行程。一起捲動閱讀，Day 5 的左欄就對應換宿與新住宿區。</p>
-                <div class="itinerary-browse" role="group" aria-label="依日期之住宿交通與每日行程">
-                  <div class="itinerary-browse__row itinerary-browse__row--head">
-                    <h3 class="itinerary-left__heading" id="itinerary-left-title">住宿與交通主軸</h3>
-                    <h3 class="itinerary-right__heading" id="itinerary-daily-title">每日安排</h3>
+                <p class="itinerary-section-lead itinerary-main-section__lead">以下為 2 欄×8 列的每日對照表：每一列同一天的住宿／交通在左、當日行程在右，與整頁一起捲動。</p>
+                <section class="aligned-itinerary-section" aria-label="清邁八日住宿與每日行程對照" id="itinerary-aligned">
+                  <div class="aligned-itinerary-header">
+                    <h3 class="itinerary-col-title" id="itinerary-left-title">住宿與交通</h3>
+                    <h3 class="itinerary-col-title" id="itinerary-daily-title">每日安排</h3>
                   </div>
-                  <div class="itinerary-browse__row" id="itinerary-pair-01" aria-labelledby="itinerary-daily-title">
-                    <div class="itinerary-pair__left">
-                      <div class="itinerary-spine-card itinerary-pair__card" role="status">
-                        <p class="itinerary-spine-label">Day 1 住宿</p>
-                        <p class="itinerary-spine-title">出發 台灣 → 清邁 CNX</p>
-                        <p class="itinerary-spine-date">11/24</p>
-                        <p class="itinerary-spine-line">抵達清邁 · 住 莫客房（塔佩／古城）</p>
-                        <p class="itinerary-spine-line">Agoda 訂單 1721798330</p>
+                  <div class="itinerary-row" id="itinerary-day-01" aria-labelledby="itinerary-daily-title">
+                    <div class="stay-transport-cell">
+                      <p class="stay-transport__tag">DAY 1｜出發＋入住</p>
+                      <h4 class="stay-transport__title">台灣 → 清邁 CNX</h4>
+                      <p class="stay-transport__date">11/24</p>
+                      <div class="stay-transport__body">
+                        <p>抵達清邁，入住莫客房 Mo Rooms Hotel（塔佩／古城一帶）。</p>
+                        <p>Agoda 訂單 1721798330。</p>
                       </div>
                     </div>
-                    <div class="itinerary-pair__right">
-                      <article class="day-card">
+                    <div class="daily-plan-cell">
+                      <article class="day-card day-card--in-aligned-row">
                         <div class="day-card__head">
                           <div class="day-card__thumb">
                             <img src="assets/images/chiang-mai/S__104144907_0-134a5df8-9de3-4d92-96e9-3c8d222864e5.png" alt="" width="200" height="150" loading="lazy" />
@@ -353,17 +353,17 @@
                       </article>
                     </div>
                   </div>
-                  <div class="itinerary-browse__row" id="itinerary-pair-02" aria-labelledby="itinerary-daily-title">
-                    <div class="itinerary-pair__left">
-                      <div class="itinerary-spine-card itinerary-pair__card">
-                        <p class="itinerary-spine-label">Day 2 住宿</p>
-                        <p class="itinerary-spine-title">續住 莫客房 Mo Rooms</p>
-                        <p class="itinerary-spine-date">11/25</p>
-                        <p class="itinerary-spine-line">塔佩門／古城一帶（同 Day 1 飯店）</p>
+                  <div class="itinerary-row" id="itinerary-day-02" aria-labelledby="itinerary-daily-title">
+                    <div class="stay-transport-cell">
+                      <p class="stay-transport__tag">DAY 2｜續住</p>
+                      <h4 class="stay-transport__title">續住莫客房 Mo Rooms</h4>
+                      <p class="stay-transport__date">11/25</p>
+                      <div class="stay-transport__body">
+                        <p>塔佩門／古城一帶，同 Day 1 飯店。</p>
                       </div>
                     </div>
-                    <div class="itinerary-pair__right">
-                      <article class="day-card">
+                    <div class="daily-plan-cell">
+                      <article class="day-card day-card--in-aligned-row">
                         <div class="day-card__head">
                           <div class="day-card__thumb">
                             <img src="assets/images/chiang-mai/S__104144908_0-23185aaa-9a3a-471e-8a86-4867e5177276.png" alt="" width="200" height="150" loading="lazy" />
@@ -387,17 +387,17 @@
                       </article>
                     </div>
                   </div>
-                  <div class="itinerary-browse__row" id="itinerary-pair-03" aria-labelledby="itinerary-daily-title">
-                    <div class="itinerary-pair__left">
-                      <div class="itinerary-spine-card itinerary-pair__card">
-                        <p class="itinerary-spine-label">Day 3 住宿</p>
-                        <p class="itinerary-spine-title">續住 莫客房</p>
-                        <p class="itinerary-spine-date">11/26</p>
-                        <p class="itinerary-spine-line">古城塔佩一帶</p>
+                  <div class="itinerary-row" id="itinerary-day-03" aria-labelledby="itinerary-daily-title">
+                    <div class="stay-transport-cell">
+                      <p class="stay-transport__tag">DAY 3｜續住</p>
+                      <h4 class="stay-transport__title">續住莫客房</h4>
+                      <p class="stay-transport__date">11/26</p>
+                      <div class="stay-transport__body">
+                        <p>古城塔佩一帶。</p>
                       </div>
                     </div>
-                    <div class="itinerary-pair__right">
-                      <article class="day-card">
+                    <div class="daily-plan-cell">
+                      <article class="day-card day-card--in-aligned-row">
                         <div class="day-card__head">
                           <div class="day-card__thumb">
                             <img src="assets/images/chiang-mai/S__104144909_0-fa374c15-2ec9-4b8d-8108-dde55f34269f.png" alt="" width="200" height="150" loading="lazy" />
@@ -421,17 +421,17 @@
                       </article>
                     </div>
                   </div>
-                  <div class="itinerary-browse__row" id="itinerary-pair-04" aria-labelledby="itinerary-daily-title">
-                    <div class="itinerary-pair__left">
-                      <div class="itinerary-spine-card itinerary-pair__card">
-                        <p class="itinerary-spine-label">Day 4 住宿</p>
-                        <p class="itinerary-spine-title">續住 莫客房</p>
-                        <p class="itinerary-spine-date">11/27 清萊一日 · 當日回清邁</p>
-                        <p class="itinerary-spine-line">晚間仍回古城飯店</p>
+                  <div class="itinerary-row" id="itinerary-day-04" aria-labelledby="itinerary-daily-title">
+                    <div class="stay-transport-cell">
+                      <p class="stay-transport__tag">DAY 4｜續住</p>
+                      <h4 class="stay-transport__title">續住莫客房｜第一段住宿最後一晚</h4>
+                      <p class="stay-transport__date">11/27</p>
+                      <div class="stay-transport__body">
+                        <p>這天是第一段古城住宿最後一晚，隔天上午退房換宿。</p>
                       </div>
                     </div>
-                    <div class="itinerary-pair__right">
-                      <article class="day-card">
+                    <div class="daily-plan-cell">
+                      <article class="day-card day-card--in-aligned-row">
                         <div class="day-card__head">
                           <div class="day-card__thumb">
                             <img src="assets/images/chiang-mai/S__104144910_0-476d8f2b-e5ab-469b-84f7-dd583c731d98.png" alt="" width="200" height="150" loading="lazy" />
@@ -455,17 +455,18 @@
                       </article>
                     </div>
                   </div>
-                  <div class="itinerary-browse__row" id="itinerary-pair-05" aria-labelledby="itinerary-daily-title">
-                    <div class="itinerary-pair__left">
-                      <div class="itinerary-spine-card itinerary-pair__card">
-                        <p class="itinerary-spine-label">Day 5 住宿</p>
-                        <p class="itinerary-spine-title">換宿 古城 → MAYA／寧曼</p>
-                        <p class="itinerary-spine-date">11/28 上午退房後移動</p>
-                        <p class="itinerary-spine-line">午後起住 MAYA／寧曼一帶飯店（名稱與訂位確認後更新）</p>
+                  <div class="itinerary-row" id="itinerary-day-05" aria-labelledby="itinerary-daily-title">
+                    <div class="stay-transport-cell">
+                      <p class="stay-transport__tag">DAY 5｜退房＋換宿</p>
+                      <h4 class="stay-transport__title">莫客房退房 → MAYA／寧曼一帶住宿</h4>
+                      <p class="stay-transport__date">11/28</p>
+                      <div class="stay-transport__body">
+                        <p>上午從古城塔佩一帶退房，行李移動後換宿到 MAYA／寧曼一帶。這天是主要換宿日，行程不要排得太緊。</p>
+                        <p>飯店名稱與訂位資料待補。</p>
                       </div>
                     </div>
-                    <div class="itinerary-pair__right">
-                      <article class="day-card">
+                    <div class="daily-plan-cell">
+                      <article class="day-card day-card--in-aligned-row">
                         <div class="day-card__head">
                           <div class="day-card__thumb">
                             <img src="assets/images/chiang-mai/S__104144913_0-f37c4b7d-f4ae-4427-a812-24d8638e98bd.png" alt="" width="200" height="150" loading="lazy" />
@@ -489,17 +490,17 @@
                       </article>
                     </div>
                   </div>
-                  <div class="itinerary-browse__row" id="itinerary-pair-06" aria-labelledby="itinerary-daily-title">
-                    <div class="itinerary-pair__left">
-                      <div class="itinerary-spine-card itinerary-pair__card">
-                        <p class="itinerary-spine-label">Day 6 住宿</p>
-                        <p class="itinerary-spine-title">住 MAYA／寧曼一帶</p>
-                        <p class="itinerary-spine-date">11/29</p>
-                        <p class="itinerary-spine-line">以寧曼／MAYA 商圈為活動圓心</p>
+                  <div class="itinerary-row" id="itinerary-day-06" aria-labelledby="itinerary-daily-title">
+                    <div class="stay-transport-cell">
+                      <p class="stay-transport__tag">DAY 6｜住宿</p>
+                      <h4 class="stay-transport__title">住 MAYA／寧曼一帶</h4>
+                      <p class="stay-transport__date">11/29</p>
+                      <div class="stay-transport__body">
+                        <p>以 MAYA／寧曼一帶住宿為據點，方便大象行程接送與晚上回市區。</p>
                       </div>
                     </div>
-                    <div class="itinerary-pair__right">
-                      <article class="day-card">
+                    <div class="daily-plan-cell">
+                      <article class="day-card day-card--in-aligned-row">
                         <div class="day-card__head">
                           <div class="day-card__thumb">
                             <img src="assets/images/chiang-mai/elephant-jungle-sanctuary-full-day-promo.png" alt="" width="200" height="150" loading="lazy" />
@@ -523,17 +524,17 @@
                       </article>
                     </div>
                   </div>
-                  <div class="itinerary-browse__row" id="itinerary-pair-07" aria-labelledby="itinerary-daily-title">
-                    <div class="itinerary-pair__left">
-                      <div class="itinerary-spine-card itinerary-pair__card">
-                        <p class="itinerary-spine-label">Day 7 住宿</p>
-                        <p class="itinerary-spine-title">續住 MAYA／寧曼一帶</p>
-                        <p class="itinerary-spine-date">11/30</p>
-                        <p class="itinerary-spine-line">同 Day 6 飯店區</p>
+                  <div class="itinerary-row" id="itinerary-day-07" aria-labelledby="itinerary-daily-title">
+                    <div class="stay-transport-cell">
+                      <p class="stay-transport__tag">DAY 7｜住宿</p>
+                      <h4 class="stay-transport__title">住 MAYA／寧曼一帶</h4>
+                      <p class="stay-transport__date">11/30</p>
+                      <div class="stay-transport__body">
+                        <p>最後一晚住宿，晚上可安排週末市集與回程前採買。</p>
                       </div>
                     </div>
-                    <div class="itinerary-pair__right">
-                      <article class="day-card">
+                    <div class="daily-plan-cell">
+                      <article class="day-card day-card--in-aligned-row">
                         <div class="day-card__head">
                           <div class="day-card__thumb">
                             <img src="assets/images/chiang-mai/S__104144912_0-c8c37c7b-804c-4266-b8eb-7a4f888958e9.png" alt="" width="200" height="150" loading="lazy" />
@@ -557,18 +558,17 @@
                       </article>
                     </div>
                   </div>
-                  <div class="itinerary-browse__row" id="itinerary-pair-08" aria-labelledby="itinerary-daily-title">
-                    <div class="itinerary-pair__left">
-                      <div class="itinerary-spine-card itinerary-pair__card">
-                        <p class="itinerary-spine-label">Day 8 交通</p>
-                        <p class="itinerary-spine-title">回程 清邁 CNX → 台灣</p>
-                        <p class="itinerary-spine-date">12/1</p>
-                        <p class="itinerary-spine-line">長榮 EVA Air BR258 約 11:50 起飛</p>
-                        <p class="itinerary-spine-line">最後採買、整理行李、前往機場</p>
+                  <div class="itinerary-row" id="itinerary-day-08" aria-labelledby="itinerary-daily-title">
+                    <div class="stay-transport-cell">
+                      <p class="stay-transport__tag">DAY 8｜退房＋回程</p>
+                      <h4 class="stay-transport__title">清邁 CNX → 桃園 TPE</h4>
+                      <p class="stay-transport__date">12/1</p>
+                      <div class="stay-transport__body">
+                        <p>退房、前往清邁機場，搭乘長榮航空 BR258。CNX 11:50 起飛 → TPE 16:30 抵達。PNR FEH6IY，行李 2PC。實際航班仍以航空公司 App 與機場櫃台為準。</p>
                       </div>
                     </div>
-                    <div class="itinerary-pair__right">
-                      <article class="day-card">
+                    <div class="daily-plan-cell">
+                      <article class="day-card day-card--in-aligned-row">
                         <div class="day-card__head">
                           <div class="day-card__thumb">
                             <img src="assets/images/chiang-mai/S__104144913_0-f37c4b7d-f4ae-4427-a812-24d8638e98bd.png" alt="" width="200" height="150" loading="lazy" />
@@ -592,7 +592,7 @@
                       </article>
                     </div>
                   </div>
-                </div>
+                </section>
               </div>
             </section>
 
