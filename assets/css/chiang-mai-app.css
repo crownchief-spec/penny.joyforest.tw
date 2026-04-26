@@ -790,10 +790,318 @@ body.page-trip-app .site-footer .container {
   text-align: center;
 }
 
-/* 手機主欄寬度 */
-@media (max-width: 599px) {
+/* ========== 手機優先：與桌機同質的「App 外殼」體驗 ========== */
+@media (max-width: 899px) {
+  body.page-chiang-mai,
+  body.page-trip-app {
+    font-size: 15px;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* 主畫布：左右留邊＋圓角陰影，呼應桌機 app-preview（非滿版白塊） */
   .app-canvas {
-    max-width: 520px;
+    max-width: min(100%, 100vw);
+    width: auto;
+    box-sizing: border-box;
+    margin: 8px 10px 10px;
+    padding: 0 0 8px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(60, 45, 32, 0.1);
+    border: 1px solid rgba(90, 70, 50, 0.08);
+    overflow: hidden;
+  }
+
+  .app-brand {
+    padding: 20px 14px 10px;
+  }
+  .app-brand__core {
+    font-size: 15px;
+  }
+  .app-brand__sub {
+    font-size: 14px;
+  }
+
+  .trip-dashboard {
+    margin: 0 12px 12px;
+  }
+  .td-title {
+    font-size: 22px;
+  }
+  .td-sub {
+    font-size: 15px;
+  }
+  .td-meta {
+    font-size: 13px;
+    gap: 10px 14px;
+  }
+
+  .line-cta-block {
+    padding: 0 12px 14px;
+  }
+  .app-h2 {
+    font-size: 17px;
+  }
+  .app-lead {
+    font-size: 14px;
+  }
+  .line-cta-btns {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 8px;
+    padding-bottom: 4px;
+    margin: 0 -4px;
+    padding-left: 4px;
+    padding-right: 4px;
+    scrollbar-width: none;
+  }
+  .line-cta-btns::-webkit-scrollbar {
+    display: none;
+  }
+  .btn-line {
+    font-size: 13px;
+    padding: 10px 16px;
+    white-space: nowrap;
+    flex: 0 0 auto;
+  }
+
+  /* Day chips：橫向滑動＋置頂，類似 App 內分頁（在 sticky header 下方） */
+  .chips-quick {
+    position: sticky;
+    top: calc(48px + env(safe-area-inset-top, 0px));
+    z-index: 40;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 8px;
+    padding: 10px 12px 12px;
+    margin: 0 0 4px;
+    scrollbar-width: none;
+    background: linear-gradient(180deg, #fff9f0 0%, #fff4e5 100%);
+    border-bottom: 1px solid rgba(120, 90, 60, 0.1);
+    box-shadow: 0 2px 10px rgba(50, 40, 30, 0.06);
+  }
+  .chips-quick::-webkit-scrollbar {
+    display: none;
+  }
+  .chips-quick a {
+    font-size: 13px;
+    padding: 7px 12px;
+    white-space: nowrap;
+    flex: 0 0 auto;
+  }
+
+  .app-main {
+    padding: 0 10px 8px;
+  }
+
+  .filter-bar {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 8px;
+    padding: 2px 2px 8px;
+    margin: 0 -2px 8px;
+    scrollbar-width: none;
+  }
+  .filter-bar::-webkit-scrollbar {
+    display: none;
+  }
+  .filter-btn {
+    font-size: 12px;
+    font-weight: 800;
+    padding: 8px 12px;
+    white-space: nowrap;
+    flex: 0 0 auto;
+  }
+
+  .day-card-app {
+    margin: 0 0 12px;
+    border-radius: 20px;
+    box-shadow: 0 3px 14px rgba(50, 40, 32, 0.07);
+  }
+  .day-card-app__head {
+    padding: 14px 14px 10px;
+  }
+  .dch-title {
+    font-size: 19px;
+  }
+  .dch-area,
+  .dch-sum {
+    font-size: 13px;
+  }
+  .dch-weather,
+  .dch-weather--empty {
+    font-size: 12px;
+  }
+  .day-details__summary {
+    font-size: 13px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    padding: 10px 14px;
+  }
+
+  .timeline-list-app {
+    padding: 8px 8px 12px 38px;
+  }
+  .timeline-list-app::before {
+    left: 18px;
+  }
+  .timeline-dot-app {
+    left: -24px;
+    width: 26px;
+    height: 26px;
+    font-size: 13px;
+  }
+  .timeline-card-app {
+    font-size: 13px;
+    padding: 10px 12px 8px;
+    border-radius: 16px;
+  }
+  .tl-field {
+    font-size: 13px;
+    grid-template-columns: 4.5em 1fr;
+  }
+  .tl-field__k {
+    font-size: 12px;
+  }
+  .tl-thumbs img {
+    width: 72px;
+    height: 54px;
+    border-radius: 8px;
+  }
+  .tl-mini-btn {
+    font-size: 11px;
+    padding: 5px 10px;
+    min-height: 32px;
+  }
+
+  .day-toolbar {
+    padding: 10px 12px 12px;
+    gap: 8px;
+  }
+  .day-toolbar__a {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  .app-block {
+    padding: 16px 12px 12px;
+    border-top-width: 6px;
+  }
+  .app-li-card {
+    padding: 12px 14px;
+    font-size: 13px;
+  }
+  .mini-card {
+    font-size: 13px;
+    padding: 12px 14px;
+  }
+  .grid-two {
+    grid-template-columns: 1fr;
+  }
+
+  #cm-trip-map.trip-map--app {
+    height: min(240px, 38vh);
+    min-height: 200px;
+  }
+
+  .app-tabbar {
+    max-width: 100%;
+    min-height: 52px;
+    padding: 6px 6px max(6px, env(safe-area-inset-bottom, 8px));
+  }
+  .app-tabbar a {
+    font-size: 11px;
+    padding: 4px 4px 2px;
+  }
+}
+
+/* 小螢幕：雙欄 meta 太擠時改單欄，仍保 Dashboard 卡片感 */
+@media (max-width: 420px) {
+  .td-meta {
+    grid-template-columns: 1fr;
+    gap: 6px 0;
+  }
+  .app-canvas {
+    margin: 6px 6px 8px;
+    border-radius: 18px;
+    box-shadow: 0 6px 24px rgba(60, 45, 32, 0.09);
+  }
+  .trip-dashboard {
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+}
+
+/* 導覽：覆寫全站 980px 以下隱藏 .menu，清邁頁改為可橫滑的小字連結 */
+@media (max-width: 980px) {
+  body.page-chiang-mai .site-header--trip .nav,
+  body.page-trip-app .site-header--trip .nav {
+    padding: 10px 0;
+    align-items: center;
+  }
+  body.page-chiang-mai .site-header--trip .menu,
+  body.page-trip-app .site-header--trip .menu {
+    display: flex;
+    position: static;
+    left: auto;
+    right: auto;
+    top: auto;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: none;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 0 4px 0 0;
+    margin: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    scrollbar-width: none;
+  }
+  body.page-chiang-mai .site-header--trip .menu::-webkit-scrollbar,
+  body.page-trip-app .site-header--trip .menu::-webkit-scrollbar {
+    display: none;
+  }
+  body.page-chiang-mai .site-header--trip .menu a,
+  body.page-trip-app .site-header--trip .menu a {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 800;
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding: 6px 0;
+  }
+  body.page-chiang-mai .site-header--trip .brand,
+  body.page-trip-app .site-header--trip .brand {
+    font-size: 14px;
+    max-width: 42vw;
+    flex-shrink: 0;
+  }
+  body.page-chiang-mai .site-header--trip .brand span,
+  body.page-trip-app .site-header--trip .brand span {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+/* 手機專用：錨點避開 header + 置頂 chips */
+@media (max-width: 899px) {
+  body.page-chiang-mai [id^="day-"],
+  body.page-chiang-mai [id^="sec-"],
+  body.page-chiang-mai #line-quick,
+  body.page-chiang-mai #map-block,
+  body.page-chiang-mai #section-days {
+    scroll-margin-top: 108px;
   }
 }
 
