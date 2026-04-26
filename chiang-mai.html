@@ -154,14 +154,20 @@
                 </div>
 
                 <h2>地圖（清邁為主 ＋ 清萊一日）</h2>
-                <p class="small">若地圖縮得太小、看不出誰在誰旁邊，請先看本頁<strong>最上方插圖</strong>的 A～F 相對關係。此處為可縮放地圖，標記：機場、塔佩、MAYA、夜間動物園、清萊白廟。可再依你補的飯店增點。</p>
-                <div id="cm-trip-map" class="trip-map" style="height:380px; min-height:280px;" aria-label="清邁清萊概覽地圖"></div>
+                <p class="small">若地圖縮得太小、看不出誰在誰旁邊，請先看本頁<strong>最上方插圖</strong>的 A～F 相對關係。下方地圖已標上行程內出現的點位（清邁＋美旺＋清萊）。點或滑過圖釘可見名稱，圖外連結可轉到 Google 地圖。若你說的「奇妙」是指誤聽的<strong>寧曼</strong>，已另標<strong>寧曼路商圈</strong>參考點（近 MAYA）。</p>
+                <div id="cm-trip-map" class="trip-map" style="height:420px; min-height:300px;" aria-label="清邁清萊概覽地圖"></div>
                 <ul class="map-legend">
-                  <li><a href="https://www.google.com/maps/search/?api=1&query=Chiang+Mai+International+Airport" target="_blank" rel="noopener">清邁國際機場 CNX</a></li>
-                  <li><a href="https://www.google.com/maps/search/?api=1&query=Tha+Phae+Gate" target="_blank" rel="noopener">塔佩門 Tha Phae</a></li>
-                  <li><a href="https://www.google.com/maps/search/?api=1&query=MAYA+Chiang+Mai" target="_blank" rel="noopener">MAYA Lifestyle</a></li>
-                  <li><a href="https://www.google.com/maps/search/?api=1&query=Chiang+Mai+Night+Safari" target="_blank" rel="noopener">清邁夜間動物園</a></li>
-                  <li><a href="https://www.google.com/maps/search/?api=1&query=Wat+Rong+Khun" target="_blank" rel="noopener">清萊白廟</a></li>
+                  <li><a href="https://www.google.com/maps/search/?api=1&query=Chiang+Mai+International+Airport" target="_blank" rel="noopener">A 清邁國際機場 CNX</a></li>
+                  <li><a href="https://www.google.com/maps/search/?api=1&query=Tha+Phae+Gate" target="_blank" rel="noopener">B 塔佩門 Tha Phae</a></li>
+                  <li><a href="https://www.google.com/maps/search/?api=1&query=Ping+River+Tha+Phae+Chiang+Mai" target="_blank" rel="noopener">平河（塔佩一帶）</a></li>
+                  <li><a href="https://www.google.com/maps/search/?api=1&query=Chiang+Mai+Old+City" target="_blank" rel="noopener">清邁古城一帶</a></li>
+                  <li><a href="https://www.google.com/maps/search/?api=1&query=Nimmanhaemin+Road+Chiang+Mai" target="_blank" rel="noopener">寧曼路商圈（參考）</a></li>
+                  <li><a href="https://www.google.com/maps/search/?api=1&query=MAYA+Chiang+Mai" target="_blank" rel="noopener">C MAYA Lifestyle</a></li>
+                  <li><a href="https://www.google.com/maps/search/?api=1&query=Chiang+Mai+Night+Safari" target="_blank" rel="noopener">D 清邁夜間動物園</a></li>
+                  <li><a href="https://www.google.com/maps/search/?api=1&query=Elephant+Friends+Hotel+Mae+Wang" target="_blank" rel="noopener">第5天 大象朋友旅館</a></li>
+                  <li><a href="https://www.google.com/maps/search/?api=1&query=Wat+Rong+Khun" target="_blank" rel="noopener">E 清萊白廟</a></li>
+                  <li><a href="https://www.google.com/maps/search/?api=1&query=Wat+Rong+Suea+Ten" target="_blank" rel="noopener">清萊藍廟</a></li>
+                  <li><a href="https://www.google.com/maps/search/?api=1&query=Baan+Dam+Museum" target="_blank" rel="noopener">清萊黑屋 Baan Dam</a></li>
                 </ul>
               </div>
             </section>
@@ -344,21 +350,29 @@
         return;
       }
       var points = [
-        { name: '清邁國際機場 CNX', lat: 18.7683, lng: 98.9626 },
-        { name: '塔佩門', lat: 18.7877, lng: 99.0005 },
-        { name: 'MAYA', lat: 18.8025, lng: 98.9650 },
-        { name: '清邁夜間動物園', lat: 18.8600, lng: 98.9150 },
-        { name: '清萊白廟', lat: 19.8239, lng: 99.7630 }
+        { name: 'A 清邁國際機場 CNX', lat: 18.7683, lng: 98.9626 },
+        { name: 'B 塔佩門', lat: 18.7877, lng: 99.0005 },
+        { name: '平河（塔佩／水燈參考）', lat: 18.7895, lng: 99.0025 },
+        { name: '清邁古城一帶', lat: 18.7879, lng: 98.9856 },
+        { name: '寧曼路商圈（參考）', lat: 18.7980, lng: 98.9680 },
+        { name: 'C MAYA', lat: 18.8025, lng: 98.9650 },
+        { name: 'D 清邁夜間動物園', lat: 18.8600, lng: 98.9150 },
+        { name: '第5天 大象朋友旅館', lat: 18.63995, lng: 98.69954 },
+        { name: 'E 清萊白廟 Wat Rong Khun', lat: 19.8239, lng: 99.7630 },
+        { name: '清萊藍廟 Wat Rong Suea Ten', lat: 19.9103, lng: 99.8194 },
+        { name: '清萊黑屋 Baan Dam', lat: 19.9232, lng: 99.8113 }
       ];
       try {
-        var map = L.map('cm-trip-map', { scrollWheelZoom: true }).setView([19.2, 99.0], 7);
+        var map = L.map('cm-trip-map', { scrollWheelZoom: true }).setView([19.0, 99.0], 7);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; OpenStreetMap' }).addTo(map);
         var bounds = [];
         points.forEach(function (p) {
-          L.marker([p.lat, p.lng]).addTo(map).bindTooltip(p.name, { direction: 'top' });
+          L.marker([p.lat, p.lng]).addTo(map)
+            .bindPopup('<strong>' + p.name + '</strong>')
+            .bindTooltip(p.name, { direction: 'top' });
           bounds.push([p.lat, p.lng]);
         });
-        if (bounds.length) map.fitBounds(bounds, { padding: [30, 30], maxZoom: 8 });
+        if (bounds.length) map.fitBounds(bounds, { padding: [32, 32], maxZoom: 8 });
       } catch (e) {
         el.innerHTML = '<iframe title="清邁地圖" class="map-embed" src="https://www.google.com/maps?q=18.79,98.99&z=8&output=embed" style="width:100%;height:100%;min-height:280px;border:0;border-radius:18px" loading="lazy"></iframe>';
       }
