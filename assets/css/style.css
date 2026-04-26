@@ -288,6 +288,19 @@
  .md-article ul{padding-left:1.2em}
  .md-article img{max-width:100%; height:auto; border-radius:var(--r2); border:1px solid var(--line); display:block; margin:16px 0}
  .md-article .meta-line{font-size:14px; color:var(--muted); margin-bottom:1.2em}
+ /* Markdown 內可收合區塊：details + summary */
+ .md-article details.md-fold, .md-article details.chiang-fold {
+   margin:1em 0; padding:0; border:1px solid var(--line); border-radius:var(--r2); background:rgba(255,255,255,.7); overflow:hidden;
+ }
+ .md-article details.md-fold summary, .md-article details.chiang-fold summary {
+   cursor:pointer; list-style:none; padding:12px 14px; font-size:15px; font-weight:700; color:var(--wood-dark);
+   background:rgba(184,137,91,.1); -webkit-tap-highlight-color:transparent; user-select:none;
+ }
+ .md-article details.md-fold summary::-webkit-details-marker, .md-article details.chiang-fold summary::-webkit-details-marker { display:none }
+ .md-article details.md-fold summary::before, .md-article details.chiang-fold summary::before { content: '▶ '; font-size:12px; opacity:0.7; margin-right:2px; display:inline-block; transition: transform .2s; }
+ .md-article details.md-fold[open] summary::before, .md-article details.chiang-fold[open] summary::before { transform: rotate(90deg) }
+ .md-article .md-fold__body, .md-article details > .md-fold__body { padding:12px 14px 16px; border-top:1px solid var(--line) }
+ .md-article details.md-fold img, .md-article details.chiang-fold img { margin:10px 0 0; max-width:100% }
  .day-nav-bar{display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between; margin:24px 0 0; padding-top:20px; border-top:1px solid var(--line); font-size:14px}
  .day-nav-bar a{color:var(--wood-dark); font-weight:700; text-decoration:none}
  .day-nav-bar a:hover{text-decoration:underline}

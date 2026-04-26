@@ -91,6 +91,9 @@
       if (typeof marked === 'undefined' || !marked.parse) {
         throw new Error('marked not loaded');
       }
+      if (typeof marked.setOptions === 'function') {
+        marked.setOptions({ gfm: true, breaks: true });
+      }
       el.innerHTML = marked.parse(text) + navHtml();
       if (el.querySelector('h1')) {
         document.title = el.querySelector('h1').textContent + '｜清邁行程';
