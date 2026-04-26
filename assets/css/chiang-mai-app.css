@@ -1,0 +1,377 @@
+/* 清邁行程頁：App / 手冊風格（僅 chiang-mai.html） */
+body.page-chiang-mai{
+  background:#f3eee4;
+  font-size:15px;
+  line-height:1.55;
+}
+body.page-chiang-mai .site-header{
+  background:rgba(255,250,243,.95);
+  border-bottom:1px solid rgba(120, 90, 60, 0.12);
+}
+body.page-chiang-mai .site-header .container{
+  max-width:var(--app-shell, 520px);
+  width:100%;
+  padding:10px 16px;
+  margin:0 auto;
+  box-sizing:border-box;
+}
+body.page-chiang-mai .nav{ flex-wrap:wrap; gap:8px; font-size:13px; }
+body.page-chiang-mai .brand span{ font-size:14px; }
+
+.page-app-shell{
+  max-width:520px;
+  margin:0 auto;
+  background:#fffaf3;
+  min-height:100vh;
+  box-sizing:border-box;
+}
+@media (min-width: 768px){
+  .page-app-shell{
+    max-width:560px;
+    box-shadow:0 18px 60px rgba(80, 60, 40, 0.12);
+  }
+}
+
+.trip-app-header{
+  padding:28px 20px 20px;
+  border-bottom:1px solid rgba(120, 90, 60, 0.16);
+}
+.trip-label{
+  font-size:12px;
+  letter-spacing:0.08em;
+  color:#9a6a3f;
+  font-weight:700;
+  text-transform:none;
+  margin:0;
+}
+.trip-app-header h1{
+  font-size:26px;
+  line-height:1.25;
+  margin:8px 0 6px;
+  color:#1f2328;
+  font-weight:800;
+}
+.trip-app-header .trip-app-header__line{
+  font-size:14px;
+  line-height:1.6;
+  color:#5f6670;
+  margin:0 0 10px;
+}
+.trip-app-header .trip-app-header__disclaimer{
+  font-size:12px;
+  line-height:1.55;
+  color:#6b7280;
+  margin:0;
+}
+
+/* App 內通用區段 */
+.app-block{
+  padding:16px 18px 8px;
+  border-bottom:1px solid rgba(120, 90, 60, 0.1);
+}
+.app-h2{
+  font-size:17px;
+  font-weight:800;
+  color:#3d3228;
+  margin:0 0 8px;
+  letter-spacing:0.02em;
+}
+.app-lead{
+  font-size:13px;
+  line-height:1.6;
+  color:#5f6670;
+  margin:0 0 12px;
+}
+.app-capt{
+  font-size:12px;
+  color:#6b7280;
+  margin:8px 0 0;
+  line-height:1.5;
+}
+
+/* 小示意圖 */
+.app-schematic{ padding-top:12px; }
+.app-schematic__img{
+  display:block;
+  width:100%;
+  max-height:140px;
+  object-fit:contain;
+  border-radius:12px;
+  background:#fff;
+  border:1px solid rgba(120, 90, 60, 0.12);
+}
+
+/* 出發前清單 */
+.cm-checklist--app{
+  background:#fff;
+  border:1px solid rgba(120, 90, 60, 0.14) !important;
+  border-radius:14px;
+  padding:12px 14px !important;
+  margin:0 0 4px;
+  box-shadow:0 2px 8px rgba(0,0,0,.04);
+}
+.cm-checklist--app h4{
+  font-size:13px;
+  font-weight:800;
+  color:#8b5f3c;
+  margin:10px 0 6px;
+}
+.cm-checklist--app h4:first-child{ margin-top:0; }
+.cm-checklist--app ul{
+  margin:0;
+  padding-left:1.1em;
+  font-size:13px;
+  line-height:1.6;
+  color:#4b5563;
+}
+
+/* 行程總覽：緊湊表 */
+.app-trip-table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:12px;
+  background:#fff;
+  border:1px solid rgba(120, 90, 60, 0.14);
+  border-radius:12px;
+  overflow:hidden;
+}
+.app-trip-table th,
+.app-trip-table td{
+  padding:8px 8px;
+  text-align:left;
+  border-bottom:1px solid rgba(0,0,0,.06);
+  vertical-align:top;
+}
+.app-trip-table th{
+  background:rgba(184,137,91,.1);
+  font-weight:800;
+  font-size:11px;
+  color:#6b4c30;
+  white-space:nowrap;
+}
+.app-trip-table tr:last-child td{ border-bottom:0; }
+.app-trip-table a{ font-weight:700; color:#8b5f3c; }
+.app-trip-table__theme{ min-width:0; }
+
+/* 小提示三則 */
+.cm-how-wrap--app .cm-how-grid{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.cm-how-wrap--app .cm-how-card{
+  padding:10px 12px 12px;
+  border-radius:12px;
+  min-height:0;
+  font-size:13px;
+}
+.cm-how-wrap--app .cm-how-card h3{ font-size:14px; margin-bottom:4px; }
+.cm-how-wrap--app .cm-how-card p{ font-size:13px; line-height:1.55; }
+
+/* 地圖 */
+#cm-trip-map.trip-map--app{
+  height:240px;
+  min-height:200px;
+  margin-top:6px;
+  border-radius:14px;
+  border:1px solid rgba(120, 90, 60, 0.14);
+  overflow:hidden;
+}
+.map-legend--app{ margin-top:10px; }
+.map-legend--app .map-legend-group__title{
+  font-size:12px;
+  font-weight:800;
+  color:#8b5f3c;
+  margin:8px 0 4px;
+}
+.map-legend--app .map-legend{ font-size:12px; }
+.map-legend--app .map-legend a{ color:#5c4a3a; }
+
+/* Day section */
+.day-section{
+  padding:22px 18px;
+  border-bottom:10px solid #f1eadf;
+  scroll-margin-top:8px;
+}
+#spots .day-section:last-of-type{
+  border-bottom:0;
+  padding-bottom:10px;
+}
+.day-header{ margin-bottom:16px; }
+.day-header__row{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom:8px;
+  flex-wrap:wrap;
+}
+.day-number{
+  display:inline-flex;
+  align-items:center;
+  border-radius:999px;
+  padding:4px 10px;
+  font-size:13px;
+  font-weight:800;
+  background:#f1e4d3;
+  color:#8b5f3c;
+}
+.day-date{
+  font-size:13px;
+  color:#6b7280;
+  font-weight:700;
+}
+.day-header h2{
+  font-size:20px;
+  line-height:1.35;
+  margin:0 0 6px;
+  color:#1f2328;
+  font-weight:800;
+}
+.day-header p{
+  font-size:13px;
+  color:#6b7280;
+  margin:0;
+}
+
+/* Timeline */
+.timeline-list{
+  position:relative;
+  padding-left:34px;
+}
+.timeline-list::before{
+  content:"";
+  position:absolute;
+  left:13px;
+  top:8px;
+  bottom:8px;
+  width:2px;
+  background:rgba(150, 110, 70, 0.22);
+}
+.timeline-item{
+  position:relative;
+  margin-bottom:14px;
+}
+.timeline-item:last-child{ margin-bottom:0; }
+.timeline-item.type-flight  .timeline-content{ border-color:rgba(59, 130, 246, 0.22); }
+.timeline-item.type-hotel   .timeline-content{ border-color:rgba(16, 185, 129, 0.25); }
+.timeline-item.type-transport .timeline-content{ border-color:rgba(245, 158, 11, 0.28); }
+.timeline-item.type-activity .timeline-content{ border-color:rgba(217, 154, 69, 0.35); }
+.timeline-item.type-food     .timeline-content{ border-color:rgba(236, 72, 153, 0.2); }
+.timeline-item.type-note     .timeline-content{ border-color:rgba(107, 114, 128, 0.28); }
+.timeline-item.type-booking  .timeline-content{ border-color:rgba(124, 58, 237, 0.2); }
+
+.timeline-dot{
+  position:absolute;
+  left:-34px;
+  top:2px;
+  width:28px;
+  height:28px;
+  border-radius:999px;
+  background:#fff;
+  border:2px solid #d8b892;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:13px;
+  z-index:1;
+  line-height:1;
+}
+.timeline-dot--text{
+  font-size:11px;
+  font-weight:800;
+  color:#7c6a5a;
+  font-style:italic;
+}
+
+.timeline-content{
+  background:#ffffff;
+  border:1px solid rgba(120, 90, 60, 0.13);
+  border-radius:16px;
+  padding:12px 14px;
+  box-shadow:0 4px 14px rgba(80, 60, 40, 0.05);
+}
+.timeline-meta{
+  font-size:12px;
+  color:#9a6a3f;
+  font-weight:800;
+  margin-bottom:4px;
+}
+.timeline-content h3{
+  font-size:16px;
+  line-height:1.4;
+  margin:0 0 6px;
+  font-weight:800;
+  color:#2d2620;
+}
+.timeline-content p{
+  font-size:13px;
+  line-height:1.6;
+  color:#4b5563;
+  margin:0;
+}
+.timeline-tag{
+  display:inline-block;
+  margin-top:6px;
+  font-size:11px;
+  font-weight:700;
+  color:#8a5f38;
+  background:rgba(184,137,91,.12);
+  border-radius:6px;
+  padding:2px 8px;
+}
+.timeline-images{
+  display:flex;
+  gap:8px;
+  overflow-x:auto;
+  margin-top:10px;
+  padding-bottom:2px;
+  -webkit-overflow-scrolling:touch;
+}
+.timeline-images img{
+  width:92px;
+  height:68px;
+  object-fit:cover;
+  border-radius:10px;
+  flex:0 0 auto;
+  border:1px solid rgba(0,0,0,.08);
+}
+.day-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:12px;
+  padding-left:34px;
+}
+.day-actions a{
+  font-size:13px;
+  font-weight:700;
+  color:#8b5f3c;
+  background:#fff7ed;
+  border:1px solid #ead7c0;
+  border-radius:999px;
+  padding:7px 12px;
+  text-decoration:none;
+  white-space:nowrap;
+}
+.day-actions a:hover{ background:#ffedd5; }
+
+.trip-app-site-footer{
+  padding:20px 18px 32px;
+  font-size:12px;
+  color:#6b7280;
+  border-top:1px solid rgba(120, 90, 60, 0.1);
+}
+.trip-app-site-footer p{ margin:0 0 8px; }
+.trip-app-site-footer a{ color:#8b5f3c; font-weight:600; }
+.trip-app-site-footer__brand{ font-weight:800; color:#5c4a3a; }
+
+/* 全站 footer 在清邁頁緊湊 */
+body.page-chiang-mai .site-footer{ padding:20px 0; font-size:12px; }
+body.page-chiang-mai .site-footer .container{ max-width:560px; }
+body.page-chiang-mai .footer-grid{ grid-template-columns:1fr; gap:12px; }
+body.page-chiang-mai .site-footer h3{ font-size:14px; }
+
+.visually-hidden{
+  position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0);
+  white-space:nowrap; border:0;
+}
