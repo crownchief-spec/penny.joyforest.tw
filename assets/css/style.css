@@ -359,29 +359,104 @@
  }
  .cm-how-card h3{font-size:15px; font-weight:800; color:var(--wood-dark); margin:0 0 8px; line-height:1.3}
  .cm-how-card p{margin:0; font-size:14px; line-height:1.7; color:var(--text); opacity:.95}
- /* 清邁：行程主軸 ＋ 每日卡片 */
+ /* 清邁：行程主軸 ＋ 每日卡片（全寬含手機一律兩欄，不堆疊為單欄） */
  .itinerary-section-head{text-align:center; margin:0 0 28px; max-width:64ch; margin-inline:auto}
  .itinerary-section-head h2{margin:0 0 12px; font-size:clamp(22px,2.4vw,30px); color:var(--text)}
  .itinerary-section-lead{margin:0; font-size:15px; line-height:1.75; color:var(--muted)}
- .itinerary-layout{
-   display:grid; grid-template-columns:minmax(260px, 0.9fr) minmax(0, 2fr); gap:24px; align-items:start;
+ .itinerary-main-section .container{
+   max-width:var(--container); width:100%;
+   box-sizing:border-box; overflow-x:clip;
+ }
+ .itinerary-main-section__title{
+   text-align:center; margin:0 0 12px; font-size:clamp(22px,2.4vw,30px); color:var(--text);
+ }
+ .itinerary-main-section__lead{
+   text-align:center; margin:0 0 24px; max-width:48ch; margin-inline:auto;
+   font-size:15px; line-height:1.75; color:var(--muted)
+ }
+ .itinerary-main-section .itinerary-layout{
+   display:grid;
+   grid-template-columns:minmax(120px, 34%) minmax(0, 66%);
+   gap:16px;
+   align-items:start;
    width:100%;
+   box-sizing:border-box;
  }
- @media (max-width: 768px){
-   .itinerary-layout{grid-template-columns:1fr}
-   .itinerary-spine{order:-1}
+ .itinerary-main-section .itinerary-left,
+ .itinerary-main-section .itinerary-right{
+   min-width:0;
  }
- .itinerary-spine{
-   position:sticky; top:12px; align-self:start;
+ .itinerary-main-section .itinerary-left{
+   position:sticky;
+   top:16px;
+   align-self:start;
    padding:0 0 4px;
  }
- @media (max-width: 768px){
-   .itinerary-spine{position:relative; top:auto}
- }
- .itinerary-spine h3{
-   font-size:clamp(16px,1.5vw,18px); margin:0 0 16px; color:var(--wood-dark);
+ .itinerary-left__heading,
+ .itinerary-right__heading{
+   font-size:clamp(16px,1.5vw,18px); margin:0 0 14px; color:var(--wood-dark);
    font-weight:800; letter-spacing:.02em;
  }
+ .itinerary-main-section .itinerary-right img,
+ .itinerary-main-section .itinerary-right iframe,
+ .itinerary-main-section .itinerary-right .trip-map,
+ .itinerary-main-section .itinerary-right .card,
+ .itinerary-main-section .itinerary-right .day-card{
+   max-width:100%;
+   box-sizing:border-box;
+ }
+ .itinerary-main-section .itinerary-right img{height:auto}
+ @media (max-width: 768px){
+   .itinerary-main-section .itinerary-layout{
+     display:grid !important;
+     grid-template-columns:minmax(96px, 36%) minmax(0, 64%) !important;
+     gap:10px !important;
+   }
+   .itinerary-main-section .itinerary-left{
+     position:sticky;
+     top:8px;
+     font-size:13px;
+     line-height:1.5;
+   }
+   .itinerary-main-section .itinerary-right{
+     font-size:13px;
+     line-height:1.55;
+   }
+   .itinerary-main-section .itinerary-left__heading,
+   .itinerary-main-section .itinerary-right__heading{
+     font-size:15px;
+   }
+   .itinerary-main-section .itinerary-card,
+   .itinerary-main-section .itinerary-right .day-card,
+   .itinerary-main-section .itinerary-spine-card{
+     padding:10px;
+     border-radius:12px;
+   }
+   .itinerary-main-section .itinerary-right img,
+   .itinerary-main-section .itinerary-right iframe{
+     width:100%;
+     max-width:100%;
+     height:auto;
+   }
+   .itinerary-main-section .day-card__head{padding:10px 10px 0; gap:8px}
+   .itinerary-main-section .day-card__foot{padding:10px; gap:6px}
+   .itinerary-main-section .day-card__title{font-size:12px; line-height:1.25; word-break:break-word; overflow-wrap:anywhere}
+   .itinerary-main-section .day-intensity{font-size:8px; padding:2px 6px; letter-spacing:0}
+   .itinerary-main-section .day-card__thumb{flex:0 0 52px; width:52px; height:40px; border-radius:8px}
+   .itinerary-main-section .lodge-pill,
+   .itinerary-main-section .day-pill{font-size:9px; padding:1px 6px}
+   .itinerary-main-section .day-card__desc{font-size:11px; line-height:1.5}
+   .itinerary-main-section .day-card__foot a{font-size:10px; padding:5px 8px}
+ }
+ .itinerary-main-section .day-card__title{word-break:break-word; overflow-wrap:anywhere}
+ .itinerary-spine-line{
+   margin:0; color:var(--muted); font-size:12px; line-height:1.45;
+ }
+ .itinerary-main-section .itinerary-timeline > li{padding-bottom:14px}
+ .itinerary-main-section .itinerary-spine-card{gap:6px; padding:12px 12px 14px}
+ .itinerary-main-section .itinerary-spine-title{font-size:13px; line-height:1.25}
+ .itinerary-main-section .itinerary-spine-date{font-size:11px}
+ .itinerary-main-section .itinerary-spine-label{font-size:9px; padding:2px 8px}
  .itinerary-timeline{list-style:none; margin:0; padding:0; position:relative}
  .itinerary-timeline > li{position:relative; padding:0 0 20px 22px; margin:0}
  .itinerary-timeline > li:last-child{padding-bottom:0}

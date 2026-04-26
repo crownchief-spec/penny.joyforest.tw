@@ -309,54 +309,58 @@
               </div>
             </section>
 
-            <section class="section tight section--spots" id="spots">
+            <section class="section tight section--spots itinerary-main-section" id="spots">
               <div class="container">
-                <header class="itinerary-section-head">
-                  <h2>行程主軸與每日安排</h2>
-                  <p class="itinerary-section-lead">左欄是班機、住宿與換宿時間軸，右欄是八天主題；搭配上方總表與地圖，就能在出發前快速掌握每一天。</p>
-                </header>
+                <h2 class="itinerary-main-section__title">行程主軸與每日安排</h2>
+                <p class="itinerary-section-lead itinerary-main-section__lead">左欄是班機、住宿與換宿時間軸，右欄是每日行程安排。</p>
                 <div class="itinerary-layout">
-                  <aside class="itinerary-spine" aria-labelledby="itinerary-spine-title">
-                    <h3 id="itinerary-spine-title">住宿與交通主軸</h3>
+                  <aside class="itinerary-left" aria-labelledby="itinerary-left-title">
+                    <h3 class="itinerary-left__heading" id="itinerary-left-title">住宿與交通主軸</h3>
                     <ol class="itinerary-timeline">
                       <li>
-                        <div class="itinerary-spine-card">
+                        <div class="itinerary-spine-card itinerary-card">
                           <p class="itinerary-spine-label">出發</p>
                           <p class="itinerary-spine-title">台灣 → 清邁 CNX</p>
                           <p class="itinerary-spine-date">11/24</p>
-                          <p class="itinerary-spine-body">配合第 1 天抵達清邁。去程航班、起飛與抵達時間及行李，請以訂位信與航空公司公告為準。</p>
+                          <p class="itinerary-spine-line">配合 Day 1 抵達清邁</p>
                         </div>
                       </li>
                       <li>
-                        <div class="itinerary-spine-card">
+                        <div class="itinerary-spine-card itinerary-card">
                           <p class="itinerary-spine-label">第 1～4 天住宿</p>
                           <p class="itinerary-spine-title">莫客房飯店 Mo Rooms Hotel</p>
                           <p class="itinerary-spine-date">11/24 入住 ～ 11/28 上午退房</p>
-                          <p class="itinerary-spine-body">塔佩門／古城一帶，方便水燈節、天燈節、古城散步與市區活動。Agoda 訂單 1721798330。</p>
-                          <p class="itinerary-spine-tip">Day 1～Day 4 都以這裡為主要住宿據點。</p>
+                          <p class="itinerary-spine-line">塔佩門／古城一帶</p>
+                          <p class="itinerary-spine-line">Agoda 訂單 1721798330</p>
                         </div>
                       </li>
                       <li>
-                        <div class="itinerary-spine-card">
+                        <div class="itinerary-spine-card itinerary-card">
+                          <p class="itinerary-spine-label">換宿</p>
+                          <p class="itinerary-spine-title">11/28 上午退房後移動</p>
+                          <p class="itinerary-spine-line">古城一帶 → MAYA／寧曼一帶</p>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="itinerary-spine-card itinerary-card">
                           <p class="itinerary-spine-label">第 5～8 天住宿</p>
                           <p class="itinerary-spine-title">MAYA／寧曼一帶住宿</p>
-                          <p class="itinerary-spine-date">11/28 午後入住 ～ 12/1 離境</p>
-                          <p class="itinerary-spine-body">第 5 天上午從古城退房後換宿到 MAYA／寧曼一帶，後續大象行程、高空繩索、市集與回程前採買都以這區為主要據點。飯店名稱與訂位確認後，會一併更新在此頁。</p>
-                          <p class="itinerary-spine-tip">Day 5 早上是主要換宿日，要注意行李搬運。</p>
+                          <p class="itinerary-spine-date">11/28 入住 ～ 回程前</p>
+                          <p class="itinerary-spine-line">飯店名稱與訂位確認後會更新於此頁</p>
                         </div>
                       </li>
                       <li>
-                        <div class="itinerary-spine-card">
+                        <div class="itinerary-spine-card itinerary-card">
                           <p class="itinerary-spine-label">回程</p>
-                          <p class="itinerary-spine-title">長榮航空 EVA Air · BR258</p>
-                          <p class="itinerary-spine-date">12/1</p>
-                          <p class="itinerary-spine-body">清邁 CNX 11:50 起飛 → 桃園 TPE 16:30 抵達。PNR FEH6IY，行李 2PC。實際航班仍以航空公司 App 與機場櫃台為準。</p>
+                          <p class="itinerary-spine-title">清邁 CNX → 台灣</p>
+                          <p class="itinerary-spine-line">長榮 BR258 · 12/1 11:50 起飛</p>
+                          <p class="itinerary-spine-line">配合最後一天行程與機場交通</p>
                         </div>
                       </li>
                     </ol>
                   </aside>
-                  <div class="itinerary-days">
-                    <h3 class="visually-hidden" id="itinerary-daily-title">八天每日行程</h3>
+                  <div class="itinerary-right">
+                    <h3 class="itinerary-right__heading" id="itinerary-daily-title">每日安排</h3>
                     <div class="day-card-grid" aria-labelledby="itinerary-daily-title">
                       <article class="day-card">
                         <div class="day-card__head">
@@ -539,6 +543,7 @@
                 </div>
               </div>
             </section>
+
           </div>
         </article>
       </div>
