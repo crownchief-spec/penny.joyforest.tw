@@ -3,341 +3,253 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>清邁 8 天 7 夜行程｜水燈天燈・古城與清萊</title>
-  <meta name="description" content="清邁 8 天 7 夜：以 App 時間軸整理每天住宿、交通、活動與提醒。水燈天燈、古城、清萊、大象、高空繩索、市集。" />
+  <title>清邁 8 天 7 夜行程｜App 型旅遊手冊</title>
+  <meta name="description" content="用 LINE 對話快速整理的清邁 8 日行程：水燈天燈、古城、清萊、大象、市集。可下載筆記與地圖。" />
   <meta name="robots" content="noindex,nofollow" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="清邁 8 天旅行手冊｜行程時間軸" />
-  <meta property="og:description" content="水燈節、天燈節、古城、清萊、大象、市集。以 App 時間軸整理每日行程。" />
+  <meta property="og:title" content="清邁 8 天 7 夜行程｜App 手冊" />
+  <meta property="og:description" content="以時間軸整理每日班機、住宿、活動與提醒。" />
   <meta property="og:locale" content="zh_TW" />
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="assets/css/chiang-mai-app.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
 </head>
-<body class="seo-article page-chiang-mai">
-  <header class="site-header">
+<body class="seo-article page-chiang-mai page-trip-app">
+  <header class="site-header site-header--trip">
     <div class="container">
       <nav class="nav" aria-label="主導覽">
         <a class="brand" href="index.html"><span>我們的小旅行</span></a>
         <div class="menu">
           <a href="index.html">首頁</a>
-          <a href="kyushu.html">九州櫻花</a>
-          <a href="#overview">本行程</a>
-          <a href="#spots">每日行程</a>
+          <a href="kyushu.html">九州</a>
+          <a href="#dashboard">總覽</a>
+          <a href="#section-days">行程</a>
         </div>
       </nav>
     </div>
   </header>
 
   <main>
-    <div class="page-app-shell" id="overview">
-      <header class="trip-app-header">
-        <p class="trip-label">Chiang Mai Trip</p>
-        <h1>清邁 8 天旅行手冊</h1>
-        <p class="trip-app-header__line">11/24–12/1｜水燈節・天燈節・古城・寧曼・大象體驗</p>
-        <p class="trip-app-header__disclaimer">本頁依目前訂位與活動資料整理，實際時間以航空公司、飯店與主辦單位公告為準。</p>
-      </header>
+    <div class="app-canvas" id="dashboard">
+      <div class="app-brand" id="line-quick">
+        <p class="app-brand__tag">Penny 旅遊</p>
+        <p class="app-brand__core">Penny 旅遊不是傳統行程表，而是可以用 <strong>LINE 對話</strong>快速生成的個人旅行 App 頁面。</p>
+        <p class="app-brand__sub">傳航班、住宿訂單、景點、Klook 行程或照片，就能整理成每天可查看、可下載、可分享的 App 型旅遊頁。</p>
+      </div>
 
-      <section class="app-block" aria-label="地點相對位置">
-        <h2 class="app-h2">地點方向（示意）</h2>
-        <p class="app-lead">圖中藍線為平河一帶（水燈參考），棕點虛線為市內相對位置；導航請以實地為準。</p>
-        <div class="app-schematic">
-          <img class="app-schematic__img" src="assets/images/hero/chiang-mai-schematic-hero.svg" alt="清邁與清萊行程地點相對位置：機場、古城塔佩、MAYA、夜間動物園、山區體驗、清萊一帶" width="400" height="200" loading="eager" />
-        </div>
-        <p class="app-capt">A 機場 B 塔佩門 C MAYA D 夜動 E 清萊 F 西邊山區體驗</p>
-      </section>
+      <div class="trip-dashboard card-app">
+        <h1 class="td-title">清邁 8 天 7 夜行程</h1>
+        <p class="td-sub">水燈天燈・古城・清萊・親子旅行規劃</p>
+        <dl class="td-meta">
+          <div><dt>日期</dt><dd>11/24–12/1</dd></div>
+          <div><dt>天數</dt><dd>8 天 7 夜</dd></div>
+          <div><dt>城市</dt><dd>Chiang Mai</dd></div>
+          <div><dt>旅伴</dt><dd>—</dd></div>
+          <div><dt>主要住宿</dt><dd>莫客房 / MAYA・寧曼帶</dd></div>
+          <div><dt>航班</dt><dd>台灣 ↔ 清邁 CNX</dd></div>
+          <div><dt>狀態</dt><dd><span class="td-pill">規劃中</span></dd></div>
+        </dl>
+      </div>
 
-      <section class="app-block" id="checklist">
-        <h2 class="app-h2">出發前確認</h2>
-        <div class="card cm-checklist cm-checklist--app" style="margin-top:0">
-          <h3 class="visually-hidden">出發前確認項目</h3>
-          <div class="cm-checklist__block">
-            <h4>1. 班機</h4>
-            <ul>
-              <li>去程與起抵時間以訂位信與航空公司為準（可對照 <strong>Day 1</strong> 飛行段）。</li>
-              <li>回程 <strong>BR258</strong> 摘要見 <strong>Day 8</strong> 時間軸飛行項。</li>
-            </ul>
-          </div>
-          <div class="cm-checklist__block">
-            <h4>2. 住宿</h4>
-            <ul>
-              <li>第 1–4 晚：<strong>莫客房 Mo Rooms</strong>（訂單 1721798330，細節見 Day 1 住宿項）。</li>
-              <li>第 5 晚起：<strong>MAYA／寧曼一帶</strong>，飯店名稱與訂位待補。</li>
-            </ul>
-          </div>
-          <div class="cm-checklist__block">
-            <h4>3. 活動</h4>
-            <ul>
-              <li>天燈接駁與集合地點、夜動訂單、清萊一日遊、大象、高空繩索、廚藝教室</li>
-            </ul>
-          </div>
-          <div class="cm-checklist__block">
-            <h4>4. 交通</h4>
-            <ul>
-              <li>Day 5 上午<strong>換宿</strong>需搬行李，當天排鬆一點。</li>
-              <li>有接駁的行程以平台／主辦通知的集合地點與時間為準。</li>
-            </ul>
-          </div>
+      <section class="line-cta-block" aria-labelledby="line-cta-h">
+        <h2 class="app-h2" id="line-cta-h">用 LINE 快速新增行程</h2>
+        <p class="app-lead">傳飯店訂單、航班、景點、Klook 訂單或照片，我們可以直接整理成這種 App 型旅遊頁面（部署時請把下方連結改為你的 LINE 官方帳或 LIFF）。</p>
+        <div class="line-cta-btns">
+          <a class="btn-line" href="#line-quick">用 LINE 新增行程</a>
+          <a class="btn-line btn-line--soft" href="#line-quick">上傳訂單截圖</a>
+          <a class="btn-line btn-line--soft" href="#line-quick">新增住宿</a>
+          <a class="btn-line btn-line--soft" href="#line-quick">新增景點</a>
+          <a class="btn-line btn-line--soft" href="#line-quick">新增提醒</a>
         </div>
       </section>
 
-      <section class="app-block" id="summary">
-        <h2 class="app-h2">行程總覽</h2>
-        <p class="app-lead">八天主題一覽；點「筆記」可開當天完整頁。下方為每日<strong>時間軸</strong>。</p>
-        <table class="app-trip-table">
-          <caption class="visually-hidden">日期與主題與筆記</caption>
-          <thead>
-            <tr>
-              <th scope="col">日期</th>
-              <th scope="col">主題</th>
-              <th scope="col">筆記</th>
-            </tr>
-          </thead>
-          <tbody>
-                        <tr><td>11/24</td><td class="app-trip-table__theme">水燈、抵達與放水燈</td><td><a href="chiang-mai-day.html?day=01">筆記</a></td></tr>
-                        <tr><td>11/25</td><td class="app-trip-table__theme">天燈節、泰服、MAYA 接駁</td><td><a href="chiang-mai-day.html?day=02">筆記</a></td></tr>
-                        <tr><td>11/26</td><td class="app-trip-table__theme">遊行、夜間動物園</td><td><a href="chiang-mai-day.html?day=03">筆記</a></td></tr>
-                        <tr><td>11/27</td><td class="app-trip-table__theme">清萊一日（白／藍／黑屋）</td><td><a href="chiang-mai-day.html?day=04">筆記</a></td></tr>
-                        <tr><td>11/28</td><td class="app-trip-table__theme">換宿、廚藝教室</td><td><a href="chiang-mai-day.html?day=05">筆記</a></td></tr>
-                        <tr><td>11/29</td><td class="app-trip-table__theme">大象全日體驗</td><td><a href="chiang-mai-day.html?day=06">筆記</a></td></tr>
-                        <tr><td>11/30</td><td class="app-trip-table__theme">高空繩索、週末市集</td><td><a href="chiang-mai-day.html?day=07">筆記</a></td></tr>
-                        <tr><td>12/1</td><td class="app-trip-table__theme">採買、搭機回台</td><td><a href="chiang-mai-day.html?day=08">筆記</a></td></tr>
-          </tbody>
-        </table>
+      <div class="chips-quick" role="navigation" aria-label="快速跳轉">
+        <a href="#day-01">Day 1</a>
+        <a href="#day-02">Day 2</a>
+        <a href="#day-03">Day 3</a>
+        <a href="#day-04">Day 4</a>
+        <a href="#day-05">Day 5</a>
+        <a href="#day-06">Day 6</a>
+        <a href="#day-07">Day 7</a>
+        <a href="#day-08">Day 8</a>
+        <a href="#sec-lodging">住宿</a>
+        <a href="#map-block">地圖</a>
+        <a href="#sec-vouchers">票券</a>
+        <a href="#sec-shopping">購物</a>
+        <a href="#sec-caveats">注意</a>
+      </div>
+
+      <div class="app-layout" id="section-days">
+        <aside class="app-rail" aria-label="日次導覽（桌機）">
+          <p class="app-rail__t">日次</p>
+          <nav class="app-rail__nav" id="day-rail-list"></nav>
+        </aside>
+        <div class="app-main">
+          <div class="filter-bar" id="filter-chips" role="tablist" aria-label="篩選節點類型">
+            <button type="button" class="filter-btn is-active" data-filter="all">全部</button>
+            <button type="button" class="filter-btn" data-filter="hotel">住宿</button>
+            <button type="button" class="filter-btn" data-filter="transport">交通</button>
+            <button type="button" class="filter-btn" data-filter="attraction">景點</button>
+            <button type="button" class="filter-btn" data-filter="food">餐飲</button>
+            <button type="button" class="filter-btn" data-filter="activity">活動</button>
+            <button type="button" class="filter-btn" data-filter="reminder">提醒</button>
+            <button type="button" class="filter-btn" data-filter="shopping">購物</button>
+            <button type="button" class="filter-btn" data-filter="note">筆記</button>
+            <button type="button" class="filter-btn" data-filter="expense">花費</button>
+            <button type="button" class="filter-btn" data-filter="flight">航班</button>
+          </div>
+          <div id="trip-days-mount" class="trip-days-mount" aria-live="polite"></div>
+        </div>
+      </div>
+
+      <section class="app-block" id="sec-lodging">
+        <h2 class="app-h2">住宿總覽</h2>
+        <p class="app-lead">分段一覽；每日細節仍以當天時間軸為準。</p>
+        <ul class="app-stack-list" id="lodging-list">
+          <li class="app-li-card">
+            <span class="app-li-card__k">11/24–11/28</span>
+            <span class="app-li-card__b">莫客房 Mo Rooms Hotel</span>
+            <span class="app-li-card__m">塔佩／古城一帶｜Agoda 1721798330</span>
+          </li>
+          <li class="app-li-card">
+            <span class="app-li-card__k">11/28–12/1</span>
+            <span class="app-li-card__b">MAYA／寧曼一帶住宿</span>
+            <span class="app-li-card__m">飯店名稱與訂位待補</span>
+          </li>
+        </ul>
       </section>
 
-      <section class="app-block cm-how-wrap--app" id="how-to-read" aria-labelledby="cm-how-title">
-        <h2 class="app-h2" id="cm-how-title">怎麼看這份手冊</h2>
-        <div class="cm-how-grid" role="list">
-          <article class="cm-how-card" role="listitem">
-            <h3>以「天」往下滑</h3>
-            <p>每天一區，先看標題與地區，再讀當天時間軸由上到下的順序。</p>
-          </article>
-          <article class="cm-how-card" role="listitem">
-            <h3>同一天看齊全</h3>
-            <p>班機、飯店、接駁、活動、備註都在同一條時間軸內，不用左右對照。</p>
-          </article>
-          <article class="cm-how-card" role="listitem">
-            <h3>需要細節時</h3>
-            <p>點當天底部的「閱讀筆記」到單日頁；要離線再下載 .md。</p>
-          </article>
+      <section class="app-block" id="sec-flights">
+        <h2 class="app-h2">航班與跨日交通</h2>
+        <div class="grid-two">
+          <div class="mini-card">
+            <h3 class="mini-card__h">去程</h3>
+            <p>台灣 → 清邁 CNX</p>
+            <dl class="dl-mini">
+              <dt>航班</dt><dd>待補</dd>
+              <dt>出發 / 抵達</dt><dd>待補</dd>
+              <dt>航廈</dt><dd>—</dd>
+              <dt>訂位代碼</dt><dd>—</dd>
+              <dt>備註</dt><dd>以訂位信為準</dd>
+            </dl>
+          </div>
+          <div class="mini-card">
+            <h3 class="mini-card__h">回程</h3>
+            <p>清邁 CNX → 桃園 TPE</p>
+            <dl class="dl-mini">
+              <dt>航班</dt><dd>BR258</dd>
+              <dt>出發 / 抵達</dt><dd>11:50 → 16:30</dd>
+              <dt>訂位代碼</dt><dd>FEH6IY</dd>
+              <dt>備註</dt><dd>行李 2PC，以航司為準</dd>
+            </dl>
+          </div>
         </div>
+      </section>
+
+      <section class="app-block" id="sec-vouchers">
+        <h2 class="app-h2">票券與預約</h2>
+        <p class="app-lead">欄位先留白，可之後從 LINE 匯入。</p>
+        <div class="voucher-list">
+          <div class="voucher-row">天燈節預約 <span class="v-empty">待補</span></div>
+          <div class="voucher-row">夜間動物園 <span class="v-tag">Klook / KKday</span></div>
+          <div class="voucher-row">清萊一日遊 <span class="v-empty">待補</span></div>
+          <div class="voucher-row">廚藝教室 <span class="v-empty">待補</span></div>
+          <div class="voucher-row">大象保育 <span class="v-tag">EJS</span></div>
+          <div class="voucher-row">高空繩索 <span class="v-empty">待補</span></div>
+        </div>
+      </section>
+
+      <section class="app-block" id="sec-people">
+        <h2 class="app-h2">參與人與分工</h2>
+        <div class="mini-card">
+          <dl class="dl-mini">
+            <dt>旅伴</dt><dd>（待填）</dd>
+            <dt>負責項目</dt><dd>—</dd>
+            <dt>飲食限制</dt><dd>—</dd>
+            <dt>護照 / 保險</dt><dd>—</dd>
+            <dt>聯絡 / 緊急聯絡人</dt><dd>—</dd>
+          </dl>
+        </div>
+      </section>
+
+      <section class="app-block" id="sec-budget">
+        <h2 class="app-h2">費用與預算</h2>
+        <div class="budget-grid">
+          <div>機票 <span class="v-empty">—</span></div>
+          <div>住宿 <span class="v-empty">—</span></div>
+          <div>交通 <span class="v-empty">—</span></div>
+          <div>活動票券 <span class="v-empty">—</span></div>
+          <div>餐飲 <span class="v-empty">—</span></div>
+          <div>購物 <span class="v-empty">—</span></div>
+          <div>其他 <span class="v-empty">—</span></div>
+        </div>
+      </section>
+
+      <section class="app-block" id="sec-shopping">
+        <h2 class="app-h2">購物清單</h2>
+        <p class="app-lead">商品、地點、預算、是否已買。</p>
+        <p class="v-empty" style="margin:0; font-size:13px">（尚未登錄，可由 LINE 新增）</p>
+      </section>
+
+      <section class="app-block" id="sec-caveats">
+        <h2 class="app-h2">注意事項</h2>
+        <ul class="caveat-ul">
+          <li><strong>天氣</strong> 泰北日夜溫差，帶薄外套。</li>
+          <li><strong>換宿</strong> Day5 有大件行李移動。</li>
+          <li><strong>接送</strong> 天燈、夜動、大象依訂單／主辦時間。</li>
+          <li><strong>節慶</strong> 水燈／天燈人潮多，交通須預留。</li>
+        </ul>
       </section>
 
       <section class="app-block" id="map-block">
-        <h2 class="app-h2">地圖與連結</h2>
-        <p class="app-lead">點名稱另開 Google 地圖。下方地圖為相對位置參考。</p>
+        <h2 class="app-h2">地圖與景點</h2>
+        <p class="app-lead">內嵌地圖＋可點名稱另開 Google Maps。</p>
         <div id="cm-trip-map" class="trip-map trip-map--app" aria-label="清邁清萊概覽地圖"></div>
-        <div class="map-legend-grouped map-legend--app">
-          <h3 class="map-legend-group__title">交通與住宿</h3>
-          <ul class="map-legend">
-            <li><a href="https://www.google.com/maps/search/?api=1&query=Chiang+Mai+International+Airport" target="_blank" rel="noopener">清邁機場 CNX</a></li>
-            <li><a href="https://www.google.com/maps/search/?api=1&query=Tha+Phae+Gate" target="_blank" rel="noopener">塔佩門</a></li>
-            <li><a href="https://www.google.com/maps/search/?api=1&query=Mo+Rooms+Hotel+Chiang+Mai" target="_blank" rel="noopener">莫客房</a></li>
-            <li><a href="https://www.google.com/maps/search/?api=1&query=MAYA+Chiang+Mai" target="_blank" rel="noopener">MAYA</a></li>
-            <li><a href="https://www.google.com/maps/search/?api=1&query=Nimmanhaemin+Road+Chiang+Mai" target="_blank" rel="noopener">寧曼</a></li>
-          </ul>
-          <h3 class="map-legend-group__title">市區</h3>
-          <ul class="map-legend">
-            <li><a href="https://www.google.com/maps/search/?api=1&query=Ping+River+Tha+Phae+Chiang+Mai" target="_blank" rel="noopener">平河</a></li>
-            <li><a href="https://www.google.com/maps/search/?api=1&query=Chiang+Mai+Old+City" target="_blank" rel="noopener">古城</a></li>
-            <li><a href="https://www.google.com/maps/search/?api=1&query=Chiang+Mai+Night+Safari" target="_blank" rel="noopener">夜間動物園</a></li>
-          </ul>
-          <h3 class="map-legend-group__title">一日遊與清萊</h3>
-          <ul class="map-legend">
-            <li><a href="https://www.google.com/maps/search/?api=1&query=Elephant+Jungle+Sanctuary+Chiang+Mai" target="_blank" rel="noopener">大象營地（參考）</a></li>
-            <li><a href="https://www.google.com/maps/search/?api=1&query=Wat+Rong+Khun" target="_blank" rel="noopener">清萊白廟</a></li>
-            <li><a href="https://www.google.com/maps/search/?api=1&query=Wat+Rong+Suea+Ten" target="_blank" rel="noopener">清萊藍廟</a></li>
-            <li><a href="https://www.google.com/maps/search/?api=1&query=Baan+Dam+Museum" target="_blank" rel="noopener">清萊黑屋</a></li>
-          </ul>
+        <div class="map-places" id="map-places-list">
+          <div class="map-pg">
+            <h3 class="map-pg__h">交通與住宿</h3>
+            <a class="map-pg__row" href="https://www.google.com/maps/search/?api=1&query=Chiang+Mai+International+Airport" target="_blank" rel="noopener">清邁機場 CNX <span>地圖</span></a>
+            <a class="map-pg__row" href="https://www.google.com/maps/search/?api=1&query=Tha+Phae+Gate" target="_blank" rel="noopener">塔佩門 <span>地圖</span></a>
+            <a class="map-pg__row" href="https://www.google.com/maps/search/?api=1&query=Mo+Rooms+Hotel+Chiang+Mai" target="_blank" rel="noopener">莫客房 <span>地圖</span></a>
+            <a class="map-pg__row" href="https://www.google.com/maps/search/?api=1&query=MAYA+Chiang+Mai" target="_blank" rel="noopener">MAYA <span>地圖</span></a>
+          </div>
+          <div class="map-pg">
+            <h3 class="map-pg__h">市區</h3>
+            <a class="map-pg__row" href="https://www.google.com/maps/search/?api=1&query=Chiang+Mai+Night+Safari" target="_blank" rel="noopener">夜間動物園 <span>地圖</span></a>
+            <a class="map-pg__row" href="https://www.google.com/maps/search/?api=1&query=Chiang+Mai+Old+City" target="_blank" rel="noopener">古城 <span>地圖</span></a>
+          </div>
+          <div class="map-pg">
+            <h3 class="map-pg__h">一日遊與清萊</h3>
+            <a class="map-pg__row" href="https://www.google.com/maps/search/?api=1&query=Wat+Rong+Khun" target="_blank" rel="noopener">清萊白廟 <span>地圖</span></a>
+            <a class="map-pg__row" href="https://www.google.com/maps/search/?api=1&query=Elephant+Jungle+Sanctuary+Chiang+Mai" target="_blank" rel="noopener">大象營地（參考）<span>地圖</span></a>
+          </div>
         </div>
       </section>
 
-      <section class="app-block" id="spots" style="border-bottom:0; padding-bottom:0">
-        <h2 class="app-h2">每日行程</h2>
-        <p class="app-lead">以旅行 App 的時間軸方式整理：每天包含住宿、交通、活動與提醒，打開手機即可依當天順序查看。</p>
-<section class="day-section" id="itinerary-day-01" aria-labelledby="day-h-1">
-  <div class="day-header">
-    <div class="day-header__row">
-      <span class="day-number" id="day-h-1">Day 1</span>
-      <span class="day-date">11/24 Mon</span>
-    </div>
-    <h2>抵達清邁・水燈節</h2>
-    <p>古城 / 塔佩門 / Ping River</p>
-  </div>
-  <div class="timeline-list">
-    <div class="timeline-item type-flight"><div class="timeline-dot" aria-hidden="true">✈</div><div class="timeline-content"><div class="timeline-meta">出發</div><h3>台灣 → 清邁 CNX</h3><p>抵達清邁，入境後前往古城塔佩一帶。</p></div></div>
-    <div class="timeline-item type-hotel"><div class="timeline-dot" aria-hidden="true">🏨</div><div class="timeline-content"><div class="timeline-meta">入住</div><h3>莫客房 Mo Rooms Hotel</h3><p>Agoda 訂單 1721798330｜塔佩 / 古城一帶。</p></div></div>
-    <div class="timeline-item type-activity"><div class="timeline-dot" aria-hidden="true">📍</div><div class="timeline-content"><div class="timeline-meta">晚上</div><h3>水燈節・抵達與放水燈</h3><p>Ping River、Tha Phae Gate、放水燈，抵達後以古城塔佩一帶為主要活動範圍。</p><span class="timeline-tag">輕鬆抵達日</span><div class="timeline-images" role="group" aria-label="當日縮圖"><img src="assets/images/chiang-mai/S__104144907_0-134a5df8-9de3-4d92-96e9-3c8d222864e5.png" alt="" width="92" height="68" loading="lazy" /></div></div></div>
-  </div>
-  <div class="day-actions">
-    <a href="chiang-mai-day.html?day=01">閱讀筆記</a>
-    <a href="content/chiang-mai/days/day-01-11-24-loy-krathong.md" download>下載 .md</a>
-  </div>
-</section>
-
-<section class="day-section" id="itinerary-day-02" aria-labelledby="day-h-2">
-  <div class="day-header">
-    <div class="day-header__row">
-      <span class="day-number" id="day-h-2">Day 2</span>
-      <span class="day-date">11/25 Tue</span>
-    </div>
-    <h2>天燈節・泰服與 MAYA 接駁</h2>
-    <p>古城 / MAYA / 天燈會場</p>
-  </div>
-  <div class="timeline-list">
-    <div class="timeline-item type-hotel"><div class="timeline-dot" aria-hidden="true">🏨</div><div class="timeline-content"><div class="timeline-meta">住宿</div><h3>續住莫客房 Mo Rooms</h3><p>塔佩門 / 古城一帶，同 Day 1 飯店。</p></div></div>
-    <div class="timeline-item type-activity"><div class="timeline-dot" aria-hidden="true">📍</div><div class="timeline-content"><div class="timeline-meta">上午</div><h3>古城泰服拍照</h3><p>上午安排古城一帶泰服拍照，時間不要排太緊。</p></div></div>
-    <div class="timeline-item type-booking"><div class="timeline-dot" aria-hidden="true">✓</div><div class="timeline-content"><div class="timeline-meta">下午</div><h3>MAYA 集合接駁</h3><p>前往 MAYA 集合，搭乘接駁前往天燈會場。</p></div></div>
-    <div class="timeline-item type-activity"><div class="timeline-dot" aria-hidden="true">📍</div><div class="timeline-content"><div class="timeline-meta">晚上</div><h3>天燈節活動</h3><p>以活動接駁時間為主，回程依主辦單位安排。</p><div class="timeline-images" role="group" aria-label="當日縮圖"><img src="assets/images/chiang-mai/S__104144908_0-23185aaa-9a3a-471e-8a86-4867e5177276.png" alt="" width="92" height="68" loading="lazy" /></div></div></div>
-  </div>
-  <div class="day-actions">
-    <a href="chiang-mai-day.html?day=02">閱讀筆記</a>
-    <a href="content/chiang-mai/days/day-02-11-25-yi-peng.md" download>下載 .md</a>
-  </div>
-</section>
-
-<section class="day-section" id="itinerary-day-03" aria-labelledby="day-h-3">
-  <div class="day-header">
-    <div class="day-header__row">
-      <span class="day-number" id="day-h-3">Day 3</span>
-      <span class="day-date">11/26 Wed</span>
-    </div>
-    <h2>古城市區・夜間動物園</h2>
-    <p>古城 / 咖啡 / 夜間動物園</p>
-  </div>
-  <div class="timeline-list">
-    <div class="timeline-item type-hotel"><div class="timeline-dot" aria-hidden="true">🏨</div><div class="timeline-content"><div class="timeline-meta">住宿</div><h3>續住莫客房</h3><p>古城塔佩一帶。</p></div></div>
-    <div class="timeline-item type-note"><div class="timeline-dot timeline-dot--text" aria-hidden="true">i</div><div class="timeline-content"><div class="timeline-meta">上午</div><h3>慢一點開始</h3><p>前兩天節慶活動較滿，上午保留休息。</p></div></div>
-    <div class="timeline-item type-activity"><div class="timeline-dot" aria-hidden="true">📍</div><div class="timeline-content"><div class="timeline-meta">下午</div><h3>古城與咖啡</h3><p>古城散步、咖啡、彈性拍照。</p></div></div>
-    <div class="timeline-item type-activity"><div class="timeline-dot" aria-hidden="true">📍</div><div class="timeline-content"><div class="timeline-meta">晚上</div><h3>夜間動物園</h3><p>安排夜間動物園與節慶遊行，依 Klook / KKday 接送時間調整。</p><div class="timeline-images" role="group" aria-label="當日縮圖"><img src="assets/images/chiang-mai/S__104144909_0-fa374c15-2ec9-4b8d-8108-dde55f34269f.png" alt="" width="92" height="68" loading="lazy" /></div></div></div>
-  </div>
-  <div class="day-actions">
-    <a href="chiang-mai-day.html?day=03">閱讀筆記</a>
-    <a href="content/chiang-mai/days/day-03-11-26-parade-night-safari.md" download>下載 .md</a>
-  </div>
-</section>
-
-<section class="day-section" id="itinerary-day-04" aria-labelledby="day-h-4">
-  <div class="day-header">
-    <div class="day-header__row">
-      <span class="day-number" id="day-h-4">Day 4</span>
-      <span class="day-date">11/27 Thu</span>
-    </div>
-    <h2>清萊一日遊</h2>
-    <p>清萊 / 白廟 / 藍廟 / 黑屋</p>
-  </div>
-  <div class="timeline-list">
-    <div class="timeline-item type-hotel"><div class="timeline-dot" aria-hidden="true">🏨</div><div class="timeline-content"><div class="timeline-meta">住宿</div><h3>續住莫客房</h3><p>第一段古城住宿最後一晚。</p></div></div>
-    <div class="timeline-item type-transport"><div class="timeline-dot" aria-hidden="true">🚗</div><div class="timeline-content"><div class="timeline-meta">整天</div><h3>清萊一日遊車程</h3><p>這天是整段旅程車程較長的一天，出發時間通常較早。</p></div></div>
-    <div class="timeline-item type-activity"><div class="timeline-dot" aria-hidden="true">📍</div><div class="timeline-content"><div class="timeline-meta">白天</div><h3>白廟・藍廟・黑屋</h3><p>以一日遊行程安排為主。</p><div class="timeline-images" role="group" aria-label="當日縮圖"><img src="assets/images/chiang-mai/S__104144910_0-476d8f2b-e5ab-469b-84f7-dd583c731d98.png" alt="" width="92" height="68" loading="lazy" /></div></div></div>
-    <div class="timeline-item type-note"><div class="timeline-dot timeline-dot--text" aria-hidden="true">i</div><div class="timeline-content"><div class="timeline-meta">晚上</div><h3>回到清邁</h3><p>隔天要換宿，晚上不要排太晚。</p></div></div>
-  </div>
-  <div class="day-actions">
-    <a href="chiang-mai-day.html?day=04">閱讀筆記</a>
-    <a href="content/chiang-mai/days/day-04-11-27-chiang-rai.md" download>下載 .md</a>
-  </div>
-</section>
-
-<section class="day-section" id="itinerary-day-05" aria-labelledby="day-h-5">
-  <div class="day-header">
-    <div class="day-header__row">
-      <span class="day-number" id="day-h-5">Day 5</span>
-      <span class="day-date">11/28 Fri</span>
-    </div>
-    <h2>退房換宿・廚藝教室</h2>
-    <p>古城 → MAYA / 寧曼</p>
-  </div>
-  <div class="timeline-list">
-    <div class="timeline-item type-hotel"><div class="timeline-dot" aria-hidden="true">🏨</div><div class="timeline-content"><div class="timeline-meta">上午</div><h3>莫客房退房</h3><p>從古城塔佩一帶退房。</p></div></div>
-    <div class="timeline-item type-transport"><div class="timeline-dot" aria-hidden="true">🚗</div><div class="timeline-content"><div class="timeline-meta">中午</div><h3>移動到 MAYA / 寧曼一帶</h3><p>這天是主要換宿日，行李移動後換到第二間住宿。</p></div></div>
-    <div class="timeline-item type-hotel"><div class="timeline-dot" aria-hidden="true">🏨</div><div class="timeline-content"><div class="timeline-meta">入住</div><h3>MAYA / 寧曼一帶住宿</h3><p>飯店名稱與訂位資料待補。</p></div></div>
-    <div class="timeline-item type-activity"><div class="timeline-dot" aria-hidden="true">📍</div><div class="timeline-content"><div class="timeline-meta">下午</div><h3>廚藝教室</h3><p>換宿後安排廚藝教室，行程不要排太緊。</p><div class="timeline-images" role="group" aria-label="當日縮圖"><img src="assets/images/chiang-mai/S__104144913_0-f37c4b7d-f4ae-4427-a812-24d8638e98bd.png" alt="" width="92" height="68" loading="lazy" /></div></div></div>
-  </div>
-  <div class="day-actions">
-    <a href="chiang-mai-day.html?day=05">閱讀筆記</a>
-    <a href="content/chiang-mai/days/day-05-11-28-maya-cooking.md" download>下載 .md</a>
-  </div>
-</section>
-
-<section class="day-section" id="itinerary-day-06" aria-labelledby="day-h-6">
-  <div class="day-header">
-    <div class="day-header__row">
-      <span class="day-number" id="day-h-6">Day 6</span>
-      <span class="day-date">11/29 Sat</span>
-    </div>
-    <h2>大象保育全日體驗</h2>
-    <p>MAYA / 寧曼 / Elephant Jungle Sanctuary</p>
-  </div>
-  <div class="timeline-list">
-    <div class="timeline-item type-hotel"><div class="timeline-dot" aria-hidden="true">🏨</div><div class="timeline-content"><div class="timeline-meta">住宿</div><h3>住 MAYA / 寧曼一帶</h3><p>方便大象行程接送與晚上回市區。</p></div></div>
-    <div class="timeline-item type-booking"><div class="timeline-dot" aria-hidden="true">✓</div><div class="timeline-content"><div class="timeline-meta">早上</div><h3>大象行程接送</h3><p>依 Elephant Jungle Sanctuary 實際接送時間為主。</p></div></div>
-    <div class="timeline-item type-activity"><div class="timeline-dot" aria-hidden="true">📍</div><div class="timeline-content"><div class="timeline-meta">白天</div><h3>大象保育全日體驗</h3><p>參加大象保育體驗、餵食、互動與自然環境活動。</p><div class="timeline-images" role="group" aria-label="當日縮圖"><img src="assets/images/chiang-mai/elephant-jungle-sanctuary-full-day-promo.png" alt="" width="92" height="68" loading="lazy" /></div></div></div>
-    <div class="timeline-item type-note"><div class="timeline-dot timeline-dot--text" aria-hidden="true">i</div><div class="timeline-content"><div class="timeline-meta">晚上</div><h3>回市區休息</h3><p>這天體力消耗較多，晚上建議簡單吃飯休息。</p></div></div>
-  </div>
-  <div class="day-actions">
-    <a href="chiang-mai-day.html?day=06">閱讀筆記</a>
-    <a href="content/chiang-mai/days/day-06-11-29-elephant-jungle.md" download>下載 .md</a>
-  </div>
-</section>
-
-<section class="day-section" id="itinerary-day-07" aria-labelledby="day-h-7">
-  <div class="day-header">
-    <div class="day-header__row">
-      <span class="day-number" id="day-h-7">Day 7</span>
-      <span class="day-date">11/30 Sun</span>
-    </div>
-    <h2>高空繩索・週末市集</h2>
-    <p>寧曼 / 戶外活動 / 市集</p>
-  </div>
-  <div class="timeline-list">
-    <div class="timeline-item type-hotel"><div class="timeline-dot" aria-hidden="true">🏨</div><div class="timeline-content"><div class="timeline-meta">住宿</div><h3>住 MAYA / 寧曼一帶</h3><p>最後一晚住宿。</p></div></div>
-    <div class="timeline-item type-activity"><div class="timeline-dot" aria-hidden="true">📍</div><div class="timeline-content"><div class="timeline-meta">上午</div><h3>高空繩索半日行程</h3><p>上午安排戶外活動。</p></div></div>
-    <div class="timeline-item type-note"><div class="timeline-dot timeline-dot--text" aria-hidden="true">i</div><div class="timeline-content"><div class="timeline-meta">下午</div><h3>彈性休息</h3><p>保留下午彈性，不要排太滿。</p></div></div>
-    <div class="timeline-item type-activity"><div class="timeline-dot" aria-hidden="true">📍</div><div class="timeline-content"><div class="timeline-meta">晚上</div><h3>週末市集</h3><p>安排週末市集、散步、回程前採買。</p><div class="timeline-images" role="group" aria-label="當日縮圖"><img src="assets/images/chiang-mai/S__104144912_0-c8c37c7b-804c-4266-b8eb-7a4f888958e9.png" alt="" width="92" height="68" loading="lazy" /></div></div></div>
-  </div>
-  <div class="day-actions">
-    <a href="chiang-mai-day.html?day=07">閱讀筆記</a>
-    <a href="content/chiang-mai/days/day-07-11-30-zipline-market.md" download>下載 .md</a>
-  </div>
-</section>
-
-<section class="day-section" id="itinerary-day-08" aria-labelledby="day-h-8">
-  <div class="day-header">
-    <div class="day-header__row">
-      <span class="day-number" id="day-h-8">Day 8</span>
-      <span class="day-date">12/1 Mon</span>
-    </div>
-    <h2>最後採買・回台</h2>
-    <p>清邁 CNX → 桃園 TPE</p>
-  </div>
-  <div class="timeline-list">
-    <div class="timeline-item type-hotel"><div class="timeline-dot" aria-hidden="true">🏨</div><div class="timeline-content"><div class="timeline-meta">上午</div><h3>退房</h3><p>整理行李，完成退房。</p></div></div>
-    <div class="timeline-item type-activity"><div class="timeline-dot" aria-hidden="true">📍</div><div class="timeline-content"><div class="timeline-meta">上午</div><h3>早餐與最後採買</h3><p>視航班時間安排附近早餐與補買。</p><div class="timeline-images" role="group" aria-label="當日縮圖"><img src="assets/images/chiang-mai/S__104144913_0-f37c4b7d-f4ae-4427-a812-24d8638e98bd.png" alt="" width="92" height="68" loading="lazy" /></div></div></div>
-    <div class="timeline-item type-transport"><div class="timeline-dot" aria-hidden="true">🚗</div><div class="timeline-content"><div class="timeline-meta">前往機場</div><h3>前往清邁機場 CNX</h3><p>預留交通與報到時間。</p></div></div>
-    <div class="timeline-item type-flight"><div class="timeline-dot" aria-hidden="true">✈</div><div class="timeline-content"><div class="timeline-meta">11:50</div><h3>BR258 清邁 CNX → 桃園 TPE</h3><p>CNX 11:50 起飛 → TPE 16:30 抵達。PNR FEH6IY，行李 2PC。實際航班仍以航空公司 App 與機場櫃台為準。</p></div></div>
-  </div>
-  <div class="day-actions">
-    <a href="chiang-mai-day.html?day=08">閱讀筆記</a>
-    <a href="content/chiang-mai/days/day-08-12-01-return.md" download>下載 .md</a>
-  </div>
-</section>
-      </section>
-
       <div class="trip-app-site-footer" role="contentinfo">
-        <p class="trip-app-site-footer__brand">我們兩個的小旅行</p>
-        <p>本手冊供出發前與路上快速查詢。水燈／天燈日期以主辦公告為準。</p>
-        <p><span class="trip-app-site-footer__brand">女神介紹 · Penny</span> · <a href="https://www.instagram.com/penny_9511/" target="_blank" rel="noopener">Instagram @penny_9511</a></p>
+        <p>水燈／天燈日期以主辦公告為準。</p>
+        <p><a href="https://www.instagram.com/penny_9511/" target="_blank" rel="noopener">Instagram @penny_9511</a></p>
       </div>
     </div>
   </main>
 
-  <footer class="site-footer">
+  <nav class="app-tabbar" aria-label="底部導覽">
+    <a href="#dashboard">總覽</a>
+    <a href="#section-days">行程</a>
+    <a href="#map-block">地圖</a>
+    <a href="#sec-lodging">住宿</a>
+    <a href="chiang-mai-day.html?day=01">筆記</a>
+    <a href="#line-quick" class="app-tabbar__line">LINE 新增</a>
+  </nav>
+
+  <footer class="site-footer site-footer--trip">
     <div class="container">
-      <p class="small" style="margin:0; text-align:center">我們兩個 · 清邁／清萊</p>
+      <p class="small" style="margin:0">我們兩個 · 清邁</p>
     </div>
   </footer>
+
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="assets/js/chiang-mai-trip.js" defer=""></script>
   <script>
   (function () {
     var el = document.getElementById('cm-trip-map');
@@ -358,8 +270,8 @@
         { name: 'D 清邁夜間動物園', lat: 18.8600, lng: 98.9150 },
         { name: 'Elephant Jungle Sanctuary（參考）', lat: 18.65, lng: 98.78 },
         { name: 'E 清萊白廟 Wat Rong Khun', lat: 19.8239, lng: 99.7630 },
-        { name: '清萊藍廟 Wat Rong Suea Ten', lat: 19.9103, lng: 99.8194 },
-        { name: '清萊黑屋 Baan Dam', lat: 19.9232, lng: 99.8113 }
+        { name: '清萊藍廟', lat: 19.9103, lng: 99.8194 },
+        { name: '清萊黑屋', lat: 19.9232, lng: 99.8113 }
       ];
       try {
         var map = L.map('cm-trip-map', { scrollWheelZoom: true }).setView([19.0, 99.0], 7);
@@ -367,8 +279,7 @@
         var bounds = [];
         points.forEach(function (p) {
           L.marker([p.lat, p.lng]).addTo(map)
-            .bindPopup('<strong>' + p.name + '</strong>')
-            .bindTooltip(p.name, { direction: 'top' });
+            .bindPopup('<strong>' + p.name + '</strong>');
           bounds.push([p.lat, p.lng]);
         });
         if (bounds.length) map.fitBounds(bounds, { padding: [32, 32], maxZoom: 8 });
@@ -383,5 +294,8 @@
     }
   })();
   </script>
+  <noscript>
+    <p style="max-width:40rem; margin:1rem auto; padding:0 16px">請啟用 JavaScript 以顯示完整 App 型時間軸。仍可瀏覽 <a href="chiang-mai-day.html?day=01">單日筆記</a>。</p>
+  </noscript>
 </body>
 </html>

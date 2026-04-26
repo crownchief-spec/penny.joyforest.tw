@@ -1,377 +1,810 @@
-/* 清邁行程頁：App / 手冊風格（僅 chiang-mai.html） */
-body.page-chiang-mai{
-  background:#f3eee4;
-  font-size:15px;
-  line-height:1.55;
-}
-body.page-chiang-mai .site-header{
-  background:rgba(255,250,243,.95);
-  border-bottom:1px solid rgba(120, 90, 60, 0.12);
-}
-body.page-chiang-mai .site-header .container{
-  max-width:var(--app-shell, 520px);
-  width:100%;
-  padding:10px 16px;
-  margin:0 auto;
-  box-sizing:border-box;
-}
-body.page-chiang-mai .nav{ flex-wrap:wrap; gap:8px; font-size:13px; }
-body.page-chiang-mai .brand span{ font-size:14px; }
+/* 清邁 App 型旅遊手冊 — 與 penny 旅遊頁共用語彙 */
 
-.page-app-shell{
-  max-width:520px;
-  margin:0 auto;
-  background:#fffaf3;
-  min-height:100vh;
-  box-sizing:border-box;
+body.page-chiang-mai,
+body.page-trip-app {
+  background: #ede6d8;
+  font-size: 14px;
+  line-height: 1.5;
+  padding-bottom: 56px;
 }
-@media (min-width: 768px){
-  .page-app-shell{
-    max-width:560px;
-    box-shadow:0 18px 60px rgba(80, 60, 40, 0.12);
+
+body.page-chiang-mai .site-header--trip,
+body.page-trip-app .site-header--trip {
+  background: rgba(255, 249, 240, 0.96);
+  border-bottom: 1px solid rgba(120, 90, 60, 0.1);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+body.page-chiang-mai .site-header .container,
+body.page-trip-app .site-header .container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 8px 16px;
+}
+
+body.page-chiang-mai .nav,
+body.page-trip-app .nav {
+  font-size: 13px;
+  gap: 6px 12px;
+}
+
+/* 錨點跳轉：避開置頂 header / tab 預留 */
+body.page-chiang-mai [id^="day-"],
+body.page-chiang-mai [id^="sec-"],
+body.page-chiang-mai #line-quick,
+body.page-chiang-mai #map-block {
+  scroll-margin-top: 68px;
+}
+body.page-chiang-mai #day-rail,
+body.page-chiang-mai .app-canvas,
+body.page-chiang-mai .section-heading-app {
+  scroll-margin-top: 0;
+}
+
+/* 外層畫布：桌機 960～1100 置中；內層主欄仍偏窄、易讀 */
+.app-canvas {
+  max-width: 1040px;
+  margin: 0 auto;
+  background: #fff9f0;
+  min-height: 100vh;
+  box-shadow: 0 0 0 1px rgba(90, 70, 50, 0.06);
+}
+
+@media (min-width: 900px) {
+  .app-canvas {
+    margin: 12px auto 24px;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(60, 45, 30, 0.1);
   }
 }
 
-.trip-app-header{
-  padding:28px 20px 20px;
-  border-bottom:1px solid rgba(120, 90, 60, 0.16);
+/* 品牌定位 */
+.app-brand {
+  padding: 18px 16px 8px;
+  border-bottom: 1px solid rgba(120, 90, 60, 0.1);
 }
-.trip-label{
-  font-size:12px;
-  letter-spacing:0.08em;
-  color:#9a6a3f;
-  font-weight:700;
-  text-transform:none;
-  margin:0;
+.app-brand__tag {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #a67c4a;
+  margin: 0 0 6px;
 }
-.trip-app-header h1{
-  font-size:26px;
-  line-height:1.25;
-  margin:8px 0 6px;
-  color:#1f2328;
-  font-weight:800;
+.app-brand__core {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #2c2418;
+  margin: 0 0 8px;
 }
-.trip-app-header .trip-app-header__line{
-  font-size:14px;
-  line-height:1.6;
-  color:#5f6670;
-  margin:0 0 10px;
-}
-.trip-app-header .trip-app-header__disclaimer{
-  font-size:12px;
-  line-height:1.55;
-  color:#6b7280;
-  margin:0;
+.app-brand__sub {
+  font-size: 13px;
+  line-height: 1.55;
+  color: #5c5a55;
+  margin: 0;
 }
 
-/* App 內通用區段 */
-.app-block{
-  padding:16px 18px 8px;
-  border-bottom:1px solid rgba(120, 90, 60, 0.1);
+/* 旅程 Dashboard */
+.trip-dashboard {
+  margin: 12px 16px;
 }
-.app-h2{
-  font-size:17px;
-  font-weight:800;
-  color:#3d3228;
-  margin:0 0 8px;
-  letter-spacing:0.02em;
+.td-title {
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0 0 4px;
+  color: #1e1a14;
 }
-.app-lead{
-  font-size:13px;
-  line-height:1.6;
-  color:#5f6670;
-  margin:0 0 12px;
+.td-sub {
+  font-size: 14px;
+  color: #6b6358;
+  margin: 0 0 12px;
 }
-.app-capt{
-  font-size:12px;
-  color:#6b7280;
-  margin:8px 0 0;
-  line-height:1.5;
+.td-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 12px;
+  margin: 0;
+  font-size: 12px;
 }
-
-/* 小示意圖 */
-.app-schematic{ padding-top:12px; }
-.app-schematic__img{
-  display:block;
-  width:100%;
-  max-height:140px;
-  object-fit:contain;
-  border-radius:12px;
-  background:#fff;
-  border:1px solid rgba(120, 90, 60, 0.12);
+.td-meta dt {
+  color: #8b7355;
+  font-weight: 700;
+  margin: 0;
 }
-
-/* 出發前清單 */
-.cm-checklist--app{
-  background:#fff;
-  border:1px solid rgba(120, 90, 60, 0.14) !important;
-  border-radius:14px;
-  padding:12px 14px !important;
-  margin:0 0 4px;
-  box-shadow:0 2px 8px rgba(0,0,0,.04);
+.td-meta dd {
+  margin: 0 0 4px;
+  color: #2d2a26;
+  font-weight: 600;
 }
-.cm-checklist--app h4{
-  font-size:13px;
-  font-weight:800;
-  color:#8b5f3c;
-  margin:10px 0 6px;
+.td-pill {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: rgba(200, 160, 100, 0.2);
+  color: #6b4e2e;
+  font-size: 11px;
+  font-weight: 700;
 }
-.cm-checklist--app h4:first-child{ margin-top:0; }
-.cm-checklist--app ul{
-  margin:0;
-  padding-left:1.1em;
-  font-size:13px;
-  line-height:1.6;
-  color:#4b5563;
+.card-app {
+  background: #fff;
+  border: 1px solid rgba(120, 90, 60, 0.12);
+  border-radius: 16px;
+  padding: 14px 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
-/* 行程總覽：緊湊表 */
-.app-trip-table{
-  width:100%;
-  border-collapse:collapse;
-  font-size:12px;
-  background:#fff;
-  border:1px solid rgba(120, 90, 60, 0.14);
-  border-radius:12px;
-  overflow:hidden;
+/* LINE 區 */
+.line-cta-block {
+  padding: 0 16px 16px;
 }
-.app-trip-table th,
-.app-trip-table td{
-  padding:8px 8px;
-  text-align:left;
-  border-bottom:1px solid rgba(0,0,0,.06);
-  vertical-align:top;
+.line-cta-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
-.app-trip-table th{
-  background:rgba(184,137,91,.1);
-  font-weight:800;
-  font-size:11px;
-  color:#6b4c30;
-  white-space:nowrap;
+.btn-line {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 8px 12px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(180deg, #2eb886 0%, #1f9a6c 100%);
+  border: 1px solid #17805a;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset;
 }
-.app-trip-table tr:last-child td{ border-bottom:0; }
-.app-trip-table a{ font-weight:700; color:#8b5f3c; }
-.app-trip-table__theme{ min-width:0; }
+.btn-line--soft {
+  background: #fff;
+  color: #17805a;
+  border-color: #a8dcc8;
+  box-shadow: none;
+}
 
-/* 小提示三則 */
-.cm-how-wrap--app .cm-how-grid{
-  display:flex;
-  flex-direction:column;
-  gap:8px;
+/* 快速 chips */
+.chips-quick {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 0 16px 12px;
 }
-.cm-how-wrap--app .cm-how-card{
-  padding:10px 12px 12px;
-  border-radius:12px;
-  min-height:0;
-  font-size:13px;
+.chips-quick a {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(180, 150, 110, 0.3);
+  color: #6b4a30;
+  text-decoration: none;
 }
-.cm-how-wrap--app .cm-how-card h3{ font-size:14px; margin-bottom:4px; }
-.cm-how-wrap--app .cm-how-card p{ font-size:13px; line-height:1.55; }
+.chips-quick a:hover {
+  background: #fff4e3;
+}
+
+/* 兩欄佈局：桌機左導航 */
+.app-layout {
+  display: block;
+  padding: 0 0 8px;
+}
+.app-rail {
+  display: none;
+}
+.app-main {
+  min-width: 0;
+  padding: 0 8px;
+}
+@media (min-width: 900px) {
+  .app-layout {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 16px;
+    padding: 0 16px 12px;
+    align-items: start;
+  }
+  .app-rail {
+    display: block;
+    position: sticky;
+    top: 8px;
+    background: #fff9f0;
+    border: 1px solid rgba(120, 90, 60, 0.12);
+    border-radius: 14px;
+    padding: 10px 8px 12px;
+  }
+  .app-rail__t {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #9a7a55;
+    margin: 0 0 8px 4px;
+    letter-spacing: 0.06em;
+  }
+  .app-rail__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .day-rail__a {
+    font-size: 13px;
+    font-weight: 700;
+    color: #4a3a2a;
+    text-decoration: none;
+    padding: 6px 8px;
+    border-radius: 8px;
+  }
+  .day-rail__a:hover {
+    background: rgba(200, 160, 100, 0.15);
+  }
+}
+
+/* 篩選 */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+  padding: 0 8px 4px;
+}
+.filter-btn {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(120, 90, 60, 0.2);
+  background: #fff;
+  color: #5c4a3a;
+  cursor: pointer;
+}
+.filter-btn.is-active {
+  background: #c49a6c;
+  color: #fff;
+  border-color: #a67c4a;
+}
+
+/* Day card */
+.trip-days-mount {
+  padding-bottom: 8px;
+}
+.day-card-app {
+  margin: 0 0 10px;
+  background: #fffcf6;
+  border: 1px solid rgba(120, 90, 60, 0.1);
+  border-radius: 18px;
+  overflow: hidden;
+  scroll-margin-top: 72px;
+  box-shadow: 0 2px 10px rgba(50, 40, 30, 0.05);
+}
+.day-card-app__head {
+  padding: 12px 14px 8px;
+  background: linear-gradient(180deg, #fff8ee 0%, #fffcf6 100%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+.dch-row1 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  margin-bottom: 6px;
+}
+.dch-day {
+  font-size: 12px;
+  font-weight: 800;
+  color: #6b4e2e;
+  background: #f0e0cc;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+.dch-date {
+  font-size: 12px;
+  font-weight: 700;
+  color: #5c5c5a;
+}
+.dch-weather {
+  font-size: 11px;
+  color: #5b7a8f;
+  margin-left: auto;
+}
+.dch-weather--empty {
+  color: #999;
+  font-size: 11px;
+  margin-left: auto;
+}
+.dch-title {
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.3;
+  margin: 0 0 4px;
+  color: #1a1612;
+}
+.dch-area {
+  font-size: 12px;
+  color: #6b6660;
+  margin: 0 0 8px;
+}
+.dch-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+.day-chip-s {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 6px;
+  background: rgba(100, 160, 180, 0.15);
+  color: #3a5a60;
+}
+.dch-sum {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4px 8px;
+  font-size: 12px;
+  margin: 0;
+}
+.dch-sum dt {
+  color: #8b7355;
+  font-weight: 700;
+  display: inline;
+  margin: 0;
+}
+.dch-sum dd {
+  display: inline;
+  margin: 0 0 0 4px;
+  color: #333;
+  font-weight: 600;
+}
+.dch-sum > div {
+  border-top: 1px dashed rgba(0, 0, 0, 0.06);
+  padding-top: 4px;
+}
+
+/* 收合時間軸 */
+.day-details {
+  border: 0;
+}
+.day-details__summary {
+  list-style: none;
+  font-size: 12px;
+  font-weight: 800;
+  color: #6b4a30;
+  padding: 10px 14px;
+  cursor: pointer;
+  background: #faf4ea;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+.day-details__summary::-webkit-details-marker {
+  display: none;
+}
+.day-details[open] .day-details__summary {
+  background: #fff4e0;
+}
+.timeline-rail {
+  padding: 0 0 4px;
+}
+
+/* 垂直 timeline */
+.timeline-list-app {
+  position: relative;
+  padding: 6px 8px 10px 36px;
+}
+.timeline-list-app::before {
+  content: "";
+  position: absolute;
+  left: 17px;
+  top: 10px;
+  bottom: 12px;
+  width: 2px;
+  background: rgba(130, 110, 90, 0.2);
+}
+.timeline-item-app {
+  position: relative;
+  margin-bottom: 8px;
+}
+.timeline-item-app.is-filtered {
+  display: none;
+}
+.timeline-dot-app {
+  position: absolute;
+  left: -25px;
+  top: 6px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #d4b896;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  font-size: 12px;
+}
+.tld-ico {
+  line-height: 1;
+  transform: scale(0.92);
+}
+.timeline-card-app {
+  background: #fff;
+  border: 1px solid rgba(120, 90, 60, 0.12);
+  border-radius: 14px;
+  padding: 8px 10px 6px;
+  font-size: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+.tl-type-flight {
+  border-left: 3px solid #5a9fe8;
+}
+.tl-type-hotel {
+  border-left: 3px solid #2eb886;
+}
+.tl-type-transport {
+  border-left: 3px solid #e8a25a;
+}
+.tl-type-attraction {
+  border-left: 3px solid #b895d4;
+}
+.tl-type-food {
+  border-left: 3px solid #e86a9a;
+}
+.tl-type-activity {
+  border-left: 3px solid #c49a3c;
+}
+.tl-type-reminder {
+  border-left: 3px solid #888;
+}
+.tl-type-shopping {
+  border-left: 3px solid #6a9a9a;
+}
+.tl-type-note {
+  border-left: 3px solid #6b7a8a;
+}
+.tl-type-expense {
+  border-left: 3px solid #5a4a3a;
+}
+
+.tl-card-head {
+  margin-bottom: 4px;
+}
+.tl-type-pill {
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #7a5f3d;
+  letter-spacing: 0.04em;
+}
+.tl-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 2px 0;
+  margin: 0 0 4px;
+}
+.tl-field {
+  display: grid;
+  grid-template-columns: 4.2em 1fr;
+  gap: 4px 8px;
+  font-size: 12px;
+  line-height: 1.4;
+  align-items: start;
+}
+.tl-field__k {
+  color: #8a7a68;
+  font-weight: 600;
+}
+.tl-field__v {
+  color: #2a2622;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+.tl-thumbs {
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  margin: 4px 0 2px;
+  padding-bottom: 2px;
+  -webkit-overflow-scrolling: touch;
+}
+.tl-thumbs img {
+  width: 64px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  flex: 0 0 auto;
+}
+.tl-item-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 4px;
+  padding-top: 4px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+.tl-mini-btn {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: #f5f0e8;
+  color: #5a4a3a;
+  text-decoration: none;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+.tl-mini-btn--line {
+  color: #17805a;
+  background: #e8f7f0;
+  border-color: #b0dcc8;
+}
+.tl-mini-btn--ghost,
+.tl-mini-btn--disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* Day 底部工具列 */
+.day-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 8px 12px 10px;
+  background: #faf4ea;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+.day-toolbar__a {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 10px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #6b4a30;
+  background: #fff7ed;
+  border: 1px solid #e8d4bc;
+}
+.day-toolbar__a--line {
+  color: #0d6e4a;
+  border-color: #a8d4ba;
+  background: #effff6;
+}
+
+/* 靜態區塊 */
+.app-block {
+  padding: 12px 16px 10px;
+  border-top: 8px solid #ebe3d4;
+}
+.app-h2 {
+  font-size: 16px;
+  font-weight: 800;
+  color: #2d2418;
+  margin: 0 0 4px;
+}
+.app-lead {
+  font-size: 12px;
+  color: #5c5a55;
+  margin: 0 0 8px;
+  line-height: 1.5;
+}
+.app-stack-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.app-li-card {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  padding: 10px 12px;
+  margin-bottom: 6px;
+  font-size: 12px;
+}
+.app-li-card__k {
+  font-size: 11px;
+  color: #8a7355;
+  font-weight: 700;
+}
+.app-li-card__b {
+  font-weight: 800;
+  color: #2a2218;
+}
+.app-li-card__m {
+  color: #5a5550;
+  font-size: 12px;
+}
+.grid-two {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+@media (min-width: 600px) {
+  .grid-two {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.mini-card {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 12px;
+}
+.mini-card__h {
+  font-size: 13px;
+  font-weight: 800;
+  margin: 0 0 4px;
+}
+.dl-mini {
+  margin: 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2px 8px;
+  font-size: 12px;
+}
+.dl-mini dt {
+  color: #8a7a6a;
+  font-weight: 600;
+}
+.dl-mini dd {
+  margin: 0;
+}
+.voucher-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.voucher-row {
+  font-size: 12px;
+  padding: 6px 10px;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.v-empty {
+  color: #999;
+  font-size: 11px;
+}
+.v-tag {
+  font-size: 10px;
+  background: #eef6ff;
+  color: #3a5a80;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+.budget-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  font-size: 12px;
+}
+.budget-grid > div {
+  background: #fff;
+  border-radius: 8px;
+  padding: 6px 8px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+.caveat-ul {
+  margin: 0;
+  padding-left: 1.1em;
+  font-size: 12px;
+  line-height: 1.55;
+  color: #3a352e;
+}
+.trip-app-site-footer {
+  padding: 16px 16px 20px;
+  font-size: 12px;
+  color: #6b6660;
+  text-align: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
 
 /* 地圖 */
-#cm-trip-map.trip-map--app{
-  height:240px;
-  min-height:200px;
-  margin-top:6px;
-  border-radius:14px;
-  border:1px solid rgba(120, 90, 60, 0.14);
-  overflow:hidden;
+#cm-trip-map.trip-map--app {
+  height: 200px;
+  min-height: 180px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 6px 0 10px;
+  overflow: hidden;
 }
-.map-legend--app{ margin-top:10px; }
-.map-legend--app .map-legend-group__title{
-  font-size:12px;
-  font-weight:800;
-  color:#8b5f3c;
-  margin:8px 0 4px;
+.map-places {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
-.map-legend--app .map-legend{ font-size:12px; }
-.map-legend--app .map-legend a{ color:#5c4a3a; }
-
-/* Day section */
-.day-section{
-  padding:22px 18px;
-  border-bottom:10px solid #f1eadf;
-  scroll-margin-top:8px;
+.map-pg__h {
+  font-size: 12px;
+  font-weight: 800;
+  color: #6b4a30;
+  margin: 0 0 4px;
 }
-#spots .day-section:last-of-type{
-  border-bottom:0;
-  padding-bottom:10px;
+.map-pg__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: #3a3a38;
+  text-decoration: none;
+  padding: 6px 8px;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  margin-bottom: 3px;
 }
-.day-header{ margin-bottom:16px; }
-.day-header__row{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  margin-bottom:8px;
-  flex-wrap:wrap;
-}
-.day-number{
-  display:inline-flex;
-  align-items:center;
-  border-radius:999px;
-  padding:4px 10px;
-  font-size:13px;
-  font-weight:800;
-  background:#f1e4d3;
-  color:#8b5f3c;
-}
-.day-date{
-  font-size:13px;
-  color:#6b7280;
-  font-weight:700;
-}
-.day-header h2{
-  font-size:20px;
-  line-height:1.35;
-  margin:0 0 6px;
-  color:#1f2328;
-  font-weight:800;
-}
-.day-header p{
-  font-size:13px;
-  color:#6b7280;
-  margin:0;
+.map-pg__row span {
+  font-size: 10px;
+  color: #2a6db5;
+  font-weight: 800;
 }
 
-/* Timeline */
-.timeline-list{
-  position:relative;
-  padding-left:34px;
+/* 置底導覽 */
+.app-tabbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 200;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 50px;
+  padding: 4px 4px env(safe-area-inset-bottom, 8px);
+  background: rgba(255, 250, 243, 0.96);
+  border-top: 1px solid rgba(120, 90, 60, 0.15);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.06);
+  max-width: 1040px;
+  margin: 0 auto;
 }
-.timeline-list::before{
-  content:"";
-  position:absolute;
-  left:13px;
-  top:8px;
-  bottom:8px;
-  width:2px;
-  background:rgba(150, 110, 70, 0.22);
+.app-tabbar a {
+  flex: 1;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 800;
+  color: #4a3a2a;
+  text-decoration: none;
+  padding: 4px 2px;
+  line-height: 1.2;
 }
-.timeline-item{
-  position:relative;
-  margin-bottom:14px;
+.app-tabbar a:hover,
+.app-tabbar a:focus {
+  color: #a67c4a;
 }
-.timeline-item:last-child{ margin-bottom:0; }
-.timeline-item.type-flight  .timeline-content{ border-color:rgba(59, 130, 246, 0.22); }
-.timeline-item.type-hotel   .timeline-content{ border-color:rgba(16, 185, 129, 0.25); }
-.timeline-item.type-transport .timeline-content{ border-color:rgba(245, 158, 11, 0.28); }
-.timeline-item.type-activity .timeline-content{ border-color:rgba(217, 154, 69, 0.35); }
-.timeline-item.type-food     .timeline-content{ border-color:rgba(236, 72, 153, 0.2); }
-.timeline-item.type-note     .timeline-content{ border-color:rgba(107, 114, 128, 0.28); }
-.timeline-item.type-booking  .timeline-content{ border-color:rgba(124, 58, 237, 0.2); }
-
-.timeline-dot{
-  position:absolute;
-  left:-34px;
-  top:2px;
-  width:28px;
-  height:28px;
-  border-radius:999px;
-  background:#fff;
-  border:2px solid #d8b892;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:13px;
-  z-index:1;
-  line-height:1;
-}
-.timeline-dot--text{
-  font-size:11px;
-  font-weight:800;
-  color:#7c6a5a;
-  font-style:italic;
+.app-tabbar__line {
+  color: #0d6e4a !important;
 }
 
-.timeline-content{
-  background:#ffffff;
-  border:1px solid rgba(120, 90, 60, 0.13);
-  border-radius:16px;
-  padding:12px 14px;
-  box-shadow:0 4px 14px rgba(80, 60, 40, 0.05);
+/* Footer */
+body.page-chiang-mai .site-footer--trip,
+body.page-trip-app .site-footer--trip {
+  padding: 10px 0 64px;
+  background: #ede6d8;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
 }
-.timeline-meta{
-  font-size:12px;
-  color:#9a6a3f;
-  font-weight:800;
-  margin-bottom:4px;
+body.page-chiang-mai .site-footer .container,
+body.page-trip-app .site-footer .container {
+  max-width: 40rem;
+  text-align: center;
 }
-.timeline-content h3{
-  font-size:16px;
-  line-height:1.4;
-  margin:0 0 6px;
-  font-weight:800;
-  color:#2d2620;
-}
-.timeline-content p{
-  font-size:13px;
-  line-height:1.6;
-  color:#4b5563;
-  margin:0;
-}
-.timeline-tag{
-  display:inline-block;
-  margin-top:6px;
-  font-size:11px;
-  font-weight:700;
-  color:#8a5f38;
-  background:rgba(184,137,91,.12);
-  border-radius:6px;
-  padding:2px 8px;
-}
-.timeline-images{
-  display:flex;
-  gap:8px;
-  overflow-x:auto;
-  margin-top:10px;
-  padding-bottom:2px;
-  -webkit-overflow-scrolling:touch;
-}
-.timeline-images img{
-  width:92px;
-  height:68px;
-  object-fit:cover;
-  border-radius:10px;
-  flex:0 0 auto;
-  border:1px solid rgba(0,0,0,.08);
-}
-.day-actions{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-  margin-top:12px;
-  padding-left:34px;
-}
-.day-actions a{
-  font-size:13px;
-  font-weight:700;
-  color:#8b5f3c;
-  background:#fff7ed;
-  border:1px solid #ead7c0;
-  border-radius:999px;
-  padding:7px 12px;
-  text-decoration:none;
-  white-space:nowrap;
-}
-.day-actions a:hover{ background:#ffedd5; }
 
-.trip-app-site-footer{
-  padding:20px 18px 32px;
-  font-size:12px;
-  color:#6b7280;
-  border-top:1px solid rgba(120, 90, 60, 0.1);
+/* 手機主欄寬度 */
+@media (max-width: 599px) {
+  .app-canvas {
+    max-width: 520px;
+  }
 }
-.trip-app-site-footer p{ margin:0 0 8px; }
-.trip-app-site-footer a{ color:#8b5f3c; font-weight:600; }
-.trip-app-site-footer__brand{ font-weight:800; color:#5c4a3a; }
 
-/* 全站 footer 在清邁頁緊湊 */
-body.page-chiang-mai .site-footer{ padding:20px 0; font-size:12px; }
-body.page-chiang-mai .site-footer .container{ max-width:560px; }
-body.page-chiang-mai .footer-grid{ grid-template-columns:1fr; gap:12px; }
-body.page-chiang-mai .site-footer h3{ font-size:14px; }
-
-.visually-hidden{
-  position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0);
-  white-space:nowrap; border:0;
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
