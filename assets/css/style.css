@@ -374,7 +374,7 @@
    text-align:center; margin:0 0 24px; max-width:52ch; margin-inline:auto;
    font-size:15px; line-height:1.75; color:var(--muted)
  }
- /* 8 列×2 欄行程表：每列同日左住宿交通、右行程（row-based，不獨捲、非雙欄各一列表） */
+ /* 10 列×2 欄：R1 去程、R2–9 每日（左住宿右行程）、R10 回程（row-based，不獨捲） */
  .aligned-itinerary-section{
    width:100%;
    min-width:0;
@@ -408,6 +408,13 @@
    box-sizing:border-box;
  }
  .daily-plan-cell{ background:#fff }
+ .daily-plan-cell--edge{
+   background:#faf6ee; font-size:14px; line-height:1.6; color:var(--text);
+ }
+ .itinerary-edge-hint__title{
+   margin:0 0 6px; font-size:12px; font-weight:800; letter-spacing:.04em; text-transform:uppercase; color:var(--wood-dark);
+ }
+ .itinerary-edge-hint__text{ margin:0; font-size:14px; line-height:1.65; color:var(--text); }
  .stay-transport__tag{
    margin:0 0 8px; font-size:11px; font-weight:800; letter-spacing:.06em;
    text-transform:uppercase; color:var(--wood-dark);
@@ -456,10 +463,13 @@
    .aligned-itinerary-section .itinerary-row:last-of-type{ margin-bottom:0 }
    .stay-transport-cell::before,
    .daily-plan-cell::before{
-     content:"住宿與交通";
      display:block; font-size:0.82rem; font-weight:700; margin-bottom:8px; color:#9a6a3f;
    }
-   .daily-plan-cell::before{ content:"每日安排" }
+   .stay-transport-cell--outbound::before{ content:"去程機票" }
+   .stay-transport-cell--return::before{ content:"回程機票" }
+   .stay-transport-cell:not(.stay-transport-cell--outbound):not(.stay-transport-cell--return)::before{ content:"住宿" }
+   .daily-plan-cell--edge::before{ content:"說明" }
+   .daily-plan-cell:not(.daily-plan-cell--edge)::before{ content:"每日安排" }
    .stay-transport-cell,
    .daily-plan-cell{ padding:16px; border-radius:18px }
    .itinerary-main-section .day-card--in-aligned-row .day-card__head{ padding:0 0 0; gap:8px }

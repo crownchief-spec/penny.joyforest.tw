@@ -86,7 +86,7 @@
                     <h4>1. 班機確認</h4>
                     <ul>
                       <li>去程航班、起飛時間、抵達時間待補（以訂位信與航空公司為準）。</li>
-                      <li>回程 <strong>BR258</strong> 已整理在下方「行程主軸與每日安排」之八日對照表左欄（依日期）。</li>
+                      <li>回程 <strong>BR258</strong> 已整理在下方「行程主軸與每日安排」<strong>第 10 列</strong>左欄；八日內之住宿自<strong>第 2～9 列</strong>左欄與當日行程對照。</li>
                     </ul>
                   </div>
                   <div class="cm-checklist__block">
@@ -312,19 +312,34 @@
             <section class="section tight section--spots itinerary-main-section" id="spots">
               <div class="container">
                 <h2 class="itinerary-main-section__title">行程主軸與每日安排</h2>
-                <p class="itinerary-section-lead itinerary-main-section__lead">以下為 2 欄×8 列的每日對照表：每一列同一天的住宿／交通在左、當日行程在右，與整頁一起捲動。</p>
-                <section class="aligned-itinerary-section" aria-label="清邁八日住宿與每日行程對照" id="itinerary-aligned">
+                <p class="itinerary-section-lead itinerary-main-section__lead">以下為 2 欄×10 列：第 1 列為去程機票，第 2～9 列依序為 Day 1～8（左欄當日住宿、右欄當日行程），第 10 列為回程機票；與整頁一起捲動。</p>
+                <section class="aligned-itinerary-section" aria-label="去程、八日住宿與每日行程、回程" id="itinerary-aligned">
                   <div class="aligned-itinerary-header">
-                    <h3 class="itinerary-col-title" id="itinerary-left-title">住宿與交通</h3>
+                    <h3 class="itinerary-col-title" id="itinerary-left-title">機票與住宿</h3>
                     <h3 class="itinerary-col-title" id="itinerary-daily-title">每日安排</h3>
+                  </div>
+                  <div class="itinerary-row" id="itinerary-outbound" aria-labelledby="itinerary-daily-title">
+                    <div class="stay-transport-cell stay-transport-cell--outbound">
+                      <p class="stay-transport__tag">去程</p>
+                      <h4 class="stay-transport__title">台灣 → 清邁 CNX</h4>
+                      <p class="stay-transport__date">出發日 11/24</p>
+                      <div class="stay-transport__body">
+                        <p>去程航班、起飛與抵達時間請以訂位信與航空公司公告為準。</p>
+                        <p>當天抵達後的<strong>第一晚住宿</strong>與水燈活動，自<strong>第 2 列</strong>起與右欄 Day 1 行程對照。</p>
+                      </div>
+                    </div>
+                    <div class="daily-plan-cell daily-plan-cell--edge" role="note">
+                      <p class="itinerary-edge-hint__title">出發日</p>
+                      <p class="itinerary-edge-hint__text">本列左欄僅放去程重點。11/24 當天抵達、放水燈與筆記請看<strong>第 2 列</strong>右欄「Day 1」。</p>
+                    </div>
                   </div>
                   <div class="itinerary-row" id="itinerary-day-01" aria-labelledby="itinerary-daily-title">
                     <div class="stay-transport-cell">
-                      <p class="stay-transport__tag">DAY 1｜出發＋入住</p>
-                      <h4 class="stay-transport__title">台灣 → 清邁 CNX</h4>
-                      <p class="stay-transport__date">11/24</p>
+                      <p class="stay-transport__tag">DAY 1｜抵達＋入住</p>
+                      <h4 class="stay-transport__title">莫客房 Mo Rooms Hotel</h4>
+                      <p class="stay-transport__date">11/24 起 · 住古城塔佩一帶</p>
                       <div class="stay-transport__body">
-                        <p>抵達清邁，入住莫客房 Mo Rooms Hotel（塔佩／古城一帶）。</p>
+                        <p>抵達清邁後入住莫客房（塔佩／古城一帶）。</p>
                         <p>Agoda 訂單 1721798330。</p>
                       </div>
                     </div>
@@ -560,11 +575,12 @@
                   </div>
                   <div class="itinerary-row" id="itinerary-day-08" aria-labelledby="itinerary-daily-title">
                     <div class="stay-transport-cell">
-                      <p class="stay-transport__tag">DAY 8｜退房＋回程</p>
-                      <h4 class="stay-transport__title">清邁 CNX → 桃園 TPE</h4>
-                      <p class="stay-transport__date">12/1</p>
+                      <p class="stay-transport__tag">DAY 8｜住宿（最後一晚）</p>
+                      <h4 class="stay-transport__title">住 MAYA／寧曼一帶</h4>
+                      <p class="stay-transport__date">11/30 晚 ～ 12/1 上午退房</p>
                       <div class="stay-transport__body">
-                        <p>退房、前往清邁機場，搭乘長榮航空 BR258。CNX 11:50 起飛 → TPE 16:30 抵達。PNR FEH6IY，行李 2PC。實際航班仍以航空公司 App 與機場櫃台為準。</p>
+                        <p>最後一晚以 MAYA／寧曼一帶為據點。12/1 上午退房、採買、整理行李後前往清邁機場。</p>
+                        <p>回程航班起飛與訂位摘要見<strong>第 10 列</strong>左欄。</p>
                       </div>
                     </div>
                     <div class="daily-plan-cell">
@@ -590,6 +606,20 @@
                           <a href="content/chiang-mai/days/day-08-12-01-return.md" download>下載 .md</a>
                         </div>
                       </article>
+                    </div>
+                  </div>
+                  <div class="itinerary-row" id="itinerary-inbound" aria-labelledby="itinerary-daily-title">
+                    <div class="stay-transport-cell stay-transport-cell--return">
+                      <p class="stay-transport__tag">回程</p>
+                      <h4 class="stay-transport__title">清邁 CNX → 桃園 TPE</h4>
+                      <p class="stay-transport__date">12/1</p>
+                      <div class="stay-transport__body">
+                        <p>長榮航空 EVA Air <strong>BR258</strong>。清邁 CNX <strong>11:50</strong> 起飛 → 桃園 TPE <strong>16:30</strong> 抵達。PNR <strong>FEH6IY</strong>，行李 2PC。實際航班仍以航空公司 App 與機場櫃台為準。</p>
+                      </div>
+                    </div>
+                    <div class="daily-plan-cell daily-plan-cell--edge" role="note">
+                      <p class="itinerary-edge-hint__title">回程日</p>
+                      <p class="itinerary-edge-hint__text">採買、往機場與筆記已整理在上列 <strong>Day 8</strong> 右欄；本列左欄僅收回程訂位摘要。</p>
                     </div>
                   </div>
                 </section>
