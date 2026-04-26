@@ -81,7 +81,7 @@
                 <div class="card" style="margin-top:14px; border-color:var(--wood); background:rgba(184,137,91,.08)">
                   <h3 style="margin-top:0">一定要補上的項目</h3>
                   <ul class="reminder-list">
-                    <li><strong>班機去／回、訂位代號、行李：</strong>（後面再補上資料）</li>
+                    <li><strong>班機：</strong><strong>回程</strong>（清邁→桃園 BR258 等）已摘在下方「每日筆記」<strong>左欄底</strong>；<strong>去程</strong>（台灣→清邁）仍請補與核對訂位／行李。</li>
                     <li><strong>各晚住宿飯店名稱、地址、入住／退房：</strong>第 <strong>1–4 晚</strong>已訂 <strong>莫客房飯店</strong>（<strong>Mo Rooms Hotel</strong>，訂單 1721798330；見第 1 天筆記與內文照片）。<strong>第 5 晚起</strong>改住 MAYA／寧曼一帶，飯店名與訂位：（後面再補上資料）。</li>
                     <li><strong>你備註的整段日期 11.24 ～ 21.1：</strong>目前截圖上的<strong>有細節的行程是 11/24～12/1</strong> 共 8 天。若 12/2 之後到 1/1 還要續住或轉地點，另開段落（後面再補上資料）。</li>
                   </ul>
@@ -178,8 +178,14 @@
             <section class="section tight section--spots" id="spots">
               <div class="container">
                 <h2>每日筆記（Markdown 檔案）</h2>
-                <p class="spots-intro">每則內文檔在 <code>content/chiang-mai/days/*.md</code>，要改文案或換照片路徑直接編輯該檔最方便。下方面板<strong>左欄</strong>以兩段住宿對齊天數、<strong>右欄</strong>為每日行程與讀筆記連結（寬螢幕為兩欄，窄螢幕改為上／下敘述）。</p>
-                <div class="spot-cards spot-cards--itinerary" aria-label="兩段住宿與第 1–8 天筆記">
+                <p class="spots-intro">每則內文檔在 <code>content/chiang-mai/days/*.md</code>，要改文案或換照片路徑直接編輯該檔最方便。下方面板<strong>左欄最上＝出發（去程）飛行</strong>、<strong>最下＝回台（回程）飛行</strong>、中間為兩段住宿；<strong>右欄</strong>為 D1–D8 與讀筆記連結。寬螢幕兩欄格線，窄螢幕依上列順序直向顯示。</p>
+                <div class="spot-cards spot-cards--itinerary" aria-label="去程、兩段住宿、回程、與第 1–8 天筆記">
+                  <div class="spot-flight spot-flight--out">
+                    <p class="spot-flight__label">出發（去程）</p>
+                    <h3 class="spot-flight__title">台灣 → 清邁 CNX</h3>
+                    <p class="spot-flight__route">配合 D1 行程 11/24 抵達清邁</p>
+                    <p>航空公司、航班代號、起飛時刻、抵達、訂位代號 PNR、電子機票票號、行李等：（<strong>後面再補上資料</strong>，或一併寫在與回程同開的 EVA 憑證內）— 實際以登機前<strong>櫃台與 app</strong>為準。</p>
+                  </div>
                   <div class="spot-stay spot-stay--old">
                     <p class="spot-stay__label">第一段 · 清邁古城</p>
                     <p class="spot-stay__range">D1 – D4 · 11/24 入住 ～ 11/28 上午退房</p>
@@ -187,7 +193,7 @@
                     <p class="spot-stay__where">塔佩路／塔佩門一帶，方便水燈與天燈活動。Agoda 訂單 1721798330。</p>
                     <p class="spot-stay__note">住宿細節與實景照在 <a href="chiang-mai-day.html?day=01">第 1 天筆記</a> 內文。</p>
                   </div>
-                  <article class="spot-card spot-card--day01">
+                  <article class="spot-card">
                     <div class="spot-card__img">
                       <img src="assets/images/chiang-mai/S__104144907_0-134a5df8-9de3-4d92-96e9-3c8d222864e5.png" alt="水燈與塔佩門" loading="lazy" />
                     </div>
@@ -203,7 +209,7 @@
                       </div>
                     </div>
                   </article>
-                  <article class="spot-card spot-card--day02">
+                  <article class="spot-card">
                     <div class="spot-card__img">
                       <img src="assets/images/chiang-mai/S__104144908_0-23185aaa-9a3a-471e-8a86-4867e5177276.png" alt="天燈與 MAYA" loading="lazy" />
                     </div>
@@ -219,7 +225,7 @@
                       </div>
                     </div>
                   </article>
-                  <article class="spot-card spot-card--day03">
+                  <article class="spot-card">
                     <div class="spot-card__img">
                       <img src="assets/images/chiang-mai/S__104144909_0-fa374c15-2ec9-4b8d-8108-dde55f34269f.png" alt="遊行與夜間慶典" loading="lazy" />
                     </div>
@@ -235,7 +241,7 @@
                       </div>
                     </div>
                   </article>
-                  <article class="spot-card spot-card--day04">
+                  <article class="spot-card">
                     <div class="spot-card__img">
                       <img src="assets/images/chiang-mai/S__104144910_0-476d8f2b-e5ab-469b-84f7-dd583c731d98.png" alt="清萊廟與大象" loading="lazy" />
                     </div>
@@ -258,7 +264,7 @@
                     <p class="spot-stay__where">第 5 天上午自古城帶行李<strong>換宿</strong>至此，其後至出國前皆以此區為下榻點。飯店名稱、訂位可寫在 <a href="chiang-mai-day.html?day=05">第 5 天筆記</a> 或待補欄位。</p>
                     <p class="spot-stay__note">第 5 天筆記內有「本日住宿與移動」可對照大行李搬運。</p>
                   </div>
-                  <article class="spot-card spot-card--day05">
+                  <article class="spot-card">
                     <div class="spot-card__img">
                       <img src="assets/images/chiang-mai/S__104144913_0-f37c4b7d-f4ae-4427-a812-24d8638e98bd.png" alt="廚藝與市集參考" loading="lazy" />
                     </div>
@@ -274,7 +280,7 @@
                       </div>
                     </div>
                   </article>
-                  <article class="spot-card spot-card--day06">
+                  <article class="spot-card">
                     <div class="spot-card__img">
                       <img src="assets/images/chiang-mai/elephant-jungle-sanctuary-full-day-promo.png" alt="Elephant Jungle Sanctuary 全日體驗" loading="lazy" />
                     </div>
@@ -290,7 +296,7 @@
                       </div>
                     </div>
                   </article>
-                  <article class="spot-card spot-card--day07">
+                  <article class="spot-card">
                     <div class="spot-card__img">
                       <img src="assets/images/chiang-mai/S__104144912_0-c8c37c7b-804c-4266-b8eb-7a4f888958e9.png" alt="高空繩索與市集" loading="lazy" />
                     </div>
@@ -306,7 +312,7 @@
                       </div>
                     </div>
                   </article>
-                  <article class="spot-card spot-card--day08">
+                  <article class="spot-card">
                     <div class="spot-card__img">
                       <img src="assets/images/chiang-mai/S__104144913_0-f37c4b7d-f4ae-4427-a812-24d8638e98bd.png" alt="回程" loading="lazy" />
                     </div>
@@ -314,7 +320,7 @@
                       <div>
                         <p class="spot-card__meta">Day 8 · 12/1</p>
                         <h3 class="spot-card__title">採買 ＆ 回台</h3>
-                        <p class="spot-card__desc">早餐、採買、班機。航班欄在 MD 等機票補上。</p>
+                        <p class="spot-card__desc">早餐、採買、搭機。左欄已放<strong>回程 BR258</strong>；筆記內有飯店→機場與抵台後欄位。</p>
                       </div>
                       <div class="spot-card__links">
                         <a href="chiang-mai-day.html?day=08">讀筆記</a>
@@ -322,6 +328,14 @@
                       </div>
                     </div>
                   </article>
+                  <div class="spot-flight spot-flight--in">
+                    <p class="spot-flight__label">回程（飛行）</p>
+                    <h3 class="spot-flight__title">長榮航空 EVA Air · BR258</h3>
+                    <p class="spot-flight__route">清邁 CNX 11:50 起飛（12/1 一，當地）→ 桃園 TPE 16:30 抵達</p>
+                    <p>飛行時間約 3:40。抵達以<strong>第二航廈 T2</strong>為憑證所載（變更以班機實況與櫃台為準）。</p>
+                    <p><strong>訂位代號 PNR</strong> FEH6IY · 票號 695-2465236847 · 旅客名依憑證（如 Chen Tsaishen 等）。狀態 OK、艙等 X、行李 <strong>2PC</strong>；有註 FQTR 等常旅客兌獎，以櫃台為準。</p>
+                    <p>以上摘錄自電子機票，仍請以 <strong>官方 App／行程表</strong> 即時顯示為主。</p>
+                  </div>
                 </div>
               </div>
             </section>

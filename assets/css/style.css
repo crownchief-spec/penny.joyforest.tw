@@ -261,16 +261,46 @@
  .section--spots{background:linear-gradient(180deg, rgba(239,238,226,.5) 0%, var(--bg) 100%)}
  .seo-article .section--spots .container{max-width:var(--container)}
  .spots-intro{text-align:center; margin:0 0 32px; max-width:56ch; margin-inline:auto; color:var(--muted); font-size:15px}
- /* 清邁：左欄住宿分段 ＋ 右欄每日筆記（格線對齊天數列） */
- .spot-cards--itinerary{display:grid; grid-template-columns:minmax(200px, 0.9fr) minmax(0, 2.1fr); grid-template-rows:repeat(8, auto); gap:14px 24px; align-items:stretch; width:100%}
+ /* 清邁：左欄 去程＋兩段住宿＋回程；右欄 D1–D8（寬螢幕雙欄格線；窄螢幕依 DOM 順序直向排列） */
+ .spot-cards--itinerary{display:flex; flex-direction:column; gap:14px; width:100%}
+ @media (min-width: 961px){
+   .spot-cards--itinerary{
+     display:grid;
+     grid-template-columns:minmax(220px, 0.9fr) minmax(0, 2.1fr);
+     gap:14px 24px; align-items:stretch;
+   }
+   .spot-flight--out{grid-column:1; grid-row:1; align-self:start}
+   .spot-stay--old{grid-column:1; grid-row:2 / 5; align-self:stretch; min-height:0}
+   .spot-stay--maya{grid-column:1; grid-row:5 / 9; align-self:stretch; min-height:0}
+   .spot-flight--in{grid-column:1; grid-row:9; align-self:start}
+   .spot-cards--itinerary > article.spot-card:nth-of-type(1){grid-column:2; grid-row:1}
+   .spot-cards--itinerary > article.spot-card:nth-of-type(2){grid-column:2; grid-row:2}
+   .spot-cards--itinerary > article.spot-card:nth-of-type(3){grid-column:2; grid-row:3}
+   .spot-cards--itinerary > article.spot-card:nth-of-type(4){grid-column:2; grid-row:4}
+   .spot-cards--itinerary > article.spot-card:nth-of-type(5){grid-column:2; grid-row:5}
+   .spot-cards--itinerary > article.spot-card:nth-of-type(6){grid-column:2; grid-row:6}
+   .spot-cards--itinerary > article.spot-card:nth-of-type(7){grid-column:2; grid-row:7}
+   .spot-cards--itinerary > article.spot-card:nth-of-type(8){grid-column:2; grid-row:8}
+ }
+ .spot-flight{
+   display:flex; flex-direction:column; gap:8px; padding:16px 16px 18px; border-radius:var(--r);
+   background:var(--surface); border:1px solid var(--line); box-shadow:0 4px 16px rgba(0,0,0,.06);
+   font-size:13px; line-height:1.5; color:var(--text);
+ }
+ .spot-flight--out{border-left:4px solid #3d7a9e}
+ .spot-flight--in{border-left:4px solid #2a6a4a}
+ .spot-flight__label{font-size:11px; letter-spacing:.08em; font-weight:800; color:var(--muted); margin:0}
+ .spot-flight__title{font-size:15px; font-weight:800; color:var(--text); margin:0; line-height:1.35}
+ .spot-flight p{margin:0; font-size:12px; color:var(--muted); line-height:1.55}
+ .spot-flight__route{font-size:14px; font-weight:700; color:var(--wood-dark); margin:0}
  .spot-stay{
    display:flex; flex-direction:column; gap:10px; padding:20px 18px 22px; border-radius:var(--r);
    background:linear-gradient(180deg, rgba(255,255,255,.98) 0%, rgba(246,240,230,.9) 100%);
    border:1px solid var(--line); box-shadow:0 6px 20px rgba(0,0,0,.07);
-   min-height:100%;
+   min-height:0;
  }
- .spot-stay--old{grid-column:1; grid-row:1 / 5; border-left:4px solid var(--wood)}
- .spot-stay--maya{grid-column:1; grid-row:5 / 9; border-left:4px solid rgba(184,137,91,.6)}
+ .spot-stay--old{border-left:4px solid var(--wood)}
+ .spot-stay--maya{border-left:4px solid rgba(184,137,91,.6)}
  .spot-stay__label{font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); font-weight:700; margin:0}
  .spot-stay__range{font-size:13px; font-weight:700; color:var(--wood-dark); margin:0}
  .spot-stay__name{font-size:17px; margin:0; line-height:1.3; color:var(--text)}
@@ -278,20 +308,9 @@
  .spot-stay__note{font-size:12px; color:var(--muted); margin:0; line-height:1.5}
  .spot-stay__note a{color:var(--wood-dark); font-weight:600; text-decoration:none; border-bottom:1px solid rgba(184,137,91,.4)}
  .spot-stay__note a:hover{border-bottom-color:var(--wood)}
- .spot-card--day01{grid-column:2; grid-row:1}
- .spot-card--day02{grid-column:2; grid-row:2}
- .spot-card--day03{grid-column:2; grid-row:3}
- .spot-card--day04{grid-column:2; grid-row:4}
- .spot-card--day05{grid-column:2; grid-row:5}
- .spot-card--day06{grid-column:2; grid-row:6}
- .spot-card--day07{grid-column:2; grid-row:7}
- .spot-card--day08{grid-column:2; grid-row:8}
  @media (max-width: 960px){
-   .spot-cards--itinerary{
-     display:flex; flex-direction:column; gap:22px;
-   }
+   .spot-cards--itinerary > .spot-card{grid-column:unset; grid-row:unset}
    .spot-stay--old,.spot-stay--maya{min-height:0; border-left-width:4px}
-   .spot-cards--itinerary > .spot-card[class*="spot-card--day"]{grid-column:unset !important; grid-row:unset !important}
  }
  .spot-cards{display:flex; flex-direction:column; gap:28px}
  .spot-card{display:grid; grid-template-columns:min(380px, 42%) 1fr; gap:0; align-items:stretch; background:var(--surface); border-radius:var(--r); box-shadow:var(--shadow); border:1px solid var(--line); overflow:hidden; transition:box-shadow .2s}
